@@ -11,5 +11,7 @@ namespace EverestNerdEducationAndTrainingLLC.IRepositories
         int AddCustomer(User user);
         bool AuthenticateUserFromDB(string Email, string Password);
         int ContactUs(Contact contact);
+        int EditCustomer(User user);
+        User GetCustomerByEmail(string UserEmail);
     }
 }

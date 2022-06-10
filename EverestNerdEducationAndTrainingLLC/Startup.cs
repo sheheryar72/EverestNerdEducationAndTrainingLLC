@@ -2,9 +2,11 @@ using EverestNerdEducationAndTrainingLLC.IRepositories;
 using EverestNerdEducationAndTrainingLLC.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
@@ -30,9 +32,10 @@ namespace EverestNerdEducationAndTrainingLLC
             services.AddTransient<IUserRepository>(provider => new UserRepository(new SqlConnection(connectionString)));
             services.AddTransient<ICustomerFeedBackRepository>(provider => new CustomerFeedBackRepository(new SqlConnection(connectionString)));
             services.AddControllersWithViews();
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.IdleTimeout = TimeSpan.FromMinutes(3);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });

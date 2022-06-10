@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -93,7 +95,7 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="logo">
                             <a href="/Home/Index">
-                                <img id="mainlogo" src="~/logogfinal.PNG" alt="Logo"/>
+                                <img id="mainlogo" src="~/logogfinal.PNG" alt="Logo" />
                             </a>
                         </div>
                     </div>
@@ -134,7 +136,7 @@
                                         <a class="active" href="/Home/Index">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/Home/AboutUs">About us</a>
+                                        <a href="/Home/AboutUs">About-us</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="/Home/OurPrograms">Programs</a>
@@ -154,9 +156,12 @@
                                             <li><a href="/Home/Events">Events</a></li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="/Payment/Index">Payment</a>
-                                    </li>
+                                    @if (@Accessor.HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+                                    {
+                                        <li class="nav-item">
+                                            <a href="/Payment/Index">Payment</a>
+                                        </li>
+                                    }
                                     <li class="nav-item">
                                         <a href="/Home/Career">Career</a>
                                     </li>
@@ -166,13 +171,27 @@
                                     <li class="nav-item">
                                         <a href="/Home/ContactUs">Contact</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="/User/SignUp">SignUp</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="/User/SignUp">SignUp</a></li>
-                                            <li><a href="/User/SignIn">Login</a></li>
-                                        </ul>
-                                    </li>
+                                    @if (@Accessor.HttpContext.Session.GetInt32("IsUserLoggedIn") != 1)
+                                    {
+                                        <li class="nav-item">
+                                            <a href="/User/SignUp">SignUp</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="/User/SignUp">SignUp</a></li>
+                                                <li><a href="/User/SignIn">Login</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+                                    @if (@Accessor.HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+                                    {
+                                        <li class="nav-item">
+                                            <a href="#">@Accessor.HttpContext.Session.GetString("UserName")</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="/User/EditCustomer?UserEmail=@Accessor.HttpContext.Session.GetString("Email")">Edit</a></li>
+                                                <li><a href="/User/Logout">Logout</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+
                                 </ul>
                             </div>
                         </nav> <!-- nav -->

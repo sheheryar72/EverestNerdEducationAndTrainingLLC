@@ -1,8 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Design by foolishdeveloper.com -->
-    <title>Glassmorphism login Form Tutorial in html css</title>
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -96,7 +94,7 @@
             display: block;
             margin-top: 30px;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 700;
         }
 
         input {
@@ -205,9 +203,9 @@
 </head>
 <body>
     @*<div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>*@
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>*@
     <section>
         <form method="POST" action="/User/RegisterUser/">
             <h3>SignUp Here</h3>
@@ -228,18 +226,28 @@
             <input type="text" placeholder="Grade" id="Grade" name="Grade">
 
             <label for="contactNo">Phone</label>
-            <input type="number" placeholder="Phone" id="ContactNo" name="ContactNo">
+            <input type="text" placeholder="Phone" onkeypress="return isNumberKey(event)" id="ContactNo" name="ContactNo">
 
             <label for="age">Age</label>
-            <input type="number" placeholder="Age" id="Age" name="Age">
+            <input type="text" placeholder="Age" onkeypress="return isNumberKey(event)" id="Age" name="Age">
 
             <button id="signupbtn" type="submit">Sign Up</button>
             @*<div class="social">
-            <div class="go"><i class="fab fa-google"></i>  Google</div>
-            <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-        </div>*@
+                    <div class="go"><i class="fab fa-google"></i>  Google</div>
+                    <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+                </div>*@
         </form>
     </section>
+
+    <script>
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+    </script>
 
     <!--====== BACK TO TOP PART ENDS ======-->
     <!--====== jquery js ======-->

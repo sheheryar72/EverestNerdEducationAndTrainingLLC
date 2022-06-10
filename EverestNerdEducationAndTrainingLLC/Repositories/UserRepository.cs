@@ -66,6 +66,27 @@ namespace EverestNerdEducationAndTrainingLLC.Repositories
             var result = conn.Query<int>(query, param: _parameter, commandType: CommandType.Text).FirstOrDefault();
             return result;
         }
-        
+        public int EditCustomer(User user)
+        {
+            string query = "Update [User] Set UserName = @UserName, Email = @Email, Age = @Age, Grade = @Grade, Interestofstudy = @Interestofstudy, ContactNo = @ContactNo, Password = @Password Where Email = @Email SELECT @Age";
+            var _parameter = new Dictionary<string, object>();
+            _parameter.Add("@UserName", user.UserName);
+            _parameter.Add("@Email", user.Email);
+            _parameter.Add("@Age", user.Age);
+            _parameter.Add("@Grade", user.Grade);
+            _parameter.Add("@Interestofstudy", user.Interestofstudy);
+            _parameter.Add("@ContactNo", user.ContactNo);
+            _parameter.Add("@Password", user.Password);
+            var result = conn.Query<int>(query, param: _parameter, commandType: CommandType.Text).FirstOrDefault();
+            return result;
+        }
+        public User GetCustomerByEmail(string UserEmail)
+        {
+            string query = "Select * from [User] where Email = @Email";
+            var _parameter = new Dictionary<string, object>();
+            _parameter.Add("Email", UserEmail);
+            User result = conn.Query<User>(query, param: _parameter, commandType: CommandType.Text).FirstOrDefault();
+            return result;
+        }
     }
 }
