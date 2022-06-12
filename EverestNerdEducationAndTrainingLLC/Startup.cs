@@ -35,7 +35,7 @@ namespace EverestNerdEducationAndTrainingLLC
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(3);
+                options.IdleTimeout = TimeSpan.FromMinutes(5);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
@@ -50,9 +50,11 @@ namespace EverestNerdEducationAndTrainingLLC
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseStatusCodePagesWithRedirects("/Error/{0}");
+                //app.UseExceptionHandler("/Error/{0}");
+                /*app.UseExceptionHandler("/Error/Error505");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseHsts();*/
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -62,6 +64,22 @@ namespace EverestNerdEducationAndTrainingLLC
             app.UseSession();
 
             app.UseAuthorization();
+
+            /*app.Use(async (context, next) =>
+            {
+                await next();
+                if(context.Response.StatusCode == 404)
+                {
+                    context.Response.Redirect("/Error/Error404");
+                    await next();
+                }
+                else 
+                if(context.Response.StatusCode == 505)
+                {
+                    context.Request.Path = "Error/Error505";
+                    await next();
+                }
+            });*/
 
             app.UseEndpoints(endpoints =>
             {

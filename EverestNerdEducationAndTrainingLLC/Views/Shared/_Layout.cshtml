@@ -184,8 +184,9 @@
                                     @if (@Accessor.HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
                                     {
                                         <li class="nav-item">
-                                            <a href="#">@Accessor.HttpContext.Session.GetString("UserName")</a>
+                                            <a href="#">Profile(@Accessor.HttpContext.Session.GetString("UserName"))</a>
                                             <ul class="sub-menu">
+                                                <li><a href="/User/UserProfile?UserEmail=@Accessor.HttpContext.Session.GetString("Email")">Profile</a></li>
                                                 <li><a href="/User/EditCustomer?UserEmail=@Accessor.HttpContext.Session.GetString("Email")">Edit</a></li>
                                                 <li><a href="/User/Logout">Logout</a></li>
                                             </ul>

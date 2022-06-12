@@ -19,6 +19,7 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
         }
         public IActionResult Index()
         {
+            Serilog.Log.Information("Index Controller Called");
             var result = _customerFeedBackRepository.GetClientFeedBacks();
             if(result.Count > 0)
                 return View(result);

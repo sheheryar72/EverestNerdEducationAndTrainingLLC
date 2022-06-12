@@ -94,6 +94,10 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
             if (ModelState.IsValid)
             {
                 _userRepository.EditCustomer(user);
+                HttpContext.Session.SetString("Email", user.Email);
+                HttpContext.Session.SetString("UserName", user.UserName);
+                HttpContext.Session.SetString("Password", user.Password);
+                HttpContext.Session.SetInt32("IsUserLoggedIn", 1);
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -101,6 +105,14 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
                 return RedirectToAction("EditCustomer", "User");
             }
         }
-
-    }
+        public IActionResult UserProfile(string UserEmail)
+        {
+            if (HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+            {
+                User userData = _userRepository.GetCustomerByEmail(UserEmail);
+                return View(userData);
+            }
+            return RedirectToAction("SignIn", "User");
+        }
+    }   
 }
