@@ -5,6 +5,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!--Stylesheet-->
     <style media="screen">
         @**,
@@ -165,37 +168,26 @@
 
     <!--====== Title ======-->
     <!--<title>Edubin - LMS Education HTML Template</title>-->
-
     <!--====== Favicon Icon ======-->
     <!--<link rel="shortcut icon" href="~/WebsiteTemplate/images/favicon.png" type="image/png">-->
-
     <!--====== Slick css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/slick.css">-->
-
     <!--====== Animate css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/animate.css">-->
-
     <!--====== Nice Select css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/nice-select.css">-->
-
     <!--====== Nice Number css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/jquery.nice-number.min.css">-->
-
     <!--====== Magnific Popup css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/magnific-popup.css">-->
-
     <!--====== Bootstrap css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/bootstrap.min.css">-->
-
     <!--====== Fontawesome css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/font-awesome.min.css">-->
-
     <!--====== Default css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/default.css">-->
-
     <!--====== Style css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/style.css">-->
-
     <!--====== Responsive css ======-->
     <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/responsive.css">-->
 
@@ -254,8 +246,20 @@
             <label for="password">Password</label>
             <input type="password" placeholder="Password" id="Password" name="Password">
 
-            <button id="signinbtn" type="submit">Log In</button>
+            <button id="signinbtn" oncancel="myFunction()" type="submit">Log In</button>
+            <script>
+                function myFunction() {
+                    swal({
+                        title: "Good job!",
+                        text: "You Successfully Login",
+                        icon: "success",
+                    });
+                }
+            </script>
         </form>
+
+        
+        
     </section>
 
 

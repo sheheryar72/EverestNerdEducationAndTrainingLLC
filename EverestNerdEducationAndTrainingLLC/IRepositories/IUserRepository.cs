@@ -9,9 +9,10 @@ namespace EverestNerdEducationAndTrainingLLC.IRepositories
     public interface IUserRepository
     {
         int AddCustomer(User user);
-        bool AuthenticateUserFromDB(string Email, string Password);
+        Tokens AuthenticateUserFromDB(string Email, string Password);
         int ContactUs(Contact contact);
         int EditCustomer(User user);
         User GetCustomerByEmail(string UserEmail);
+        bool IsTokenValid(string key, string issuer, string token);
     }
 }

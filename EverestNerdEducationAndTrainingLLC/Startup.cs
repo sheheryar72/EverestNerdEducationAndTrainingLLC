@@ -1,5 +1,6 @@
 using EverestNerdEducationAndTrainingLLC.IRepositories;
 using EverestNerdEducationAndTrainingLLC.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -8,10 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace EverestNerdEducationAndTrainingLLC
@@ -29,7 +32,7 @@ namespace EverestNerdEducationAndTrainingLLC
         public void ConfigureServices(IServiceCollection services)
         {
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddTransient<IUserRepository>(provider => new UserRepository(new SqlConnection(connectionString)));
+            services.AddTransient<IUserRepository>(provider => new UserRepository(new SqlConnection(connectionString), Configuration));
             services.AddTransient<ICustomerFeedBackRepository>(provider => new CustomerFeedBackRepository(new SqlConnection(connectionString)));
             services.AddControllersWithViews();
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -39,6 +42,31 @@ namespace EverestNerdEducationAndTrainingLLC
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
+
+            services.AddDistributedMemoryCache();
+
+            services.AddAuthentication(
+                options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                }
+                ).AddJwtBearer(o =>
+                {
+                    var Key = Encoding.UTF8.GetBytes(Configuration["JWT:Key"]);
+                    o.SaveToken = true;
+                    o.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["JWT:Issuer"],
+                        ValidAudience = Configuration["JWT:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Key),
+
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     @*<link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">*@
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">*@
     <!--Stylesheet-->
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <style media="screen">
         @**,
@@ -41,8 +43,8 @@
                 border-radius: 50%;
             }*@
 
-        
-        
+
+
         .shape:first-child {
             background: linear-gradient( #1845ad, #23a2f6 );
             left: -80px;
@@ -170,10 +172,10 @@
     </style>
 
     <!--====== Required meta tags ======-->
-@*    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">*@
+    @*    <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">*@
 
     <!--====== Title ======-->
     <!--<title>Edubin - LMS Education HTML Template</title>-->
@@ -209,7 +211,6 @@
     <section>
         <form method="POST" action="/User/RegisterUser/">
             <h3>SignUp Here</h3>
-
             <label for="username">Full Name</label>
             <input type="text" placeholder="Full Name" id="UserName" name="UserName">
 
@@ -231,7 +232,7 @@
             <label for="age">Age</label>
             <input type="text" placeholder="Age" onkeypress="return isNumberKey(event)" id="Age" name="Age">
 
-            <button id="signupbtn" type="submit">Sign Up</button>
+            <button id="signupbtn" type="submit" onclick="myFunction()">Sign Up</button>
             @*<div class="social">
                     <div class="go"><i class="fab fa-google"></i>  Google</div>
                     <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
@@ -247,6 +248,17 @@
 
             return true;
         }
+
+        function myFunction() {
+            swal({
+                title: "Good job!",
+                text: "You Successfully Registered",
+                icon: "success",
+                timer: 7000,
+
+            });
+        }
+
     </script>
 
     <!--====== BACK TO TOP PART ENDS ======-->

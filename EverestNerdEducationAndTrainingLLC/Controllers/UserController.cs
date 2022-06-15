@@ -2,6 +2,7 @@
 using EverestNerdEducationAndTrainingLLC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +13,15 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
     public class UserController : Controller
     {
         private readonly IUserRepository _userRepository;
-        public UserController(IUserRepository userRepository)
+        private readonly IConfiguration configuration;
+        public UserController(IUserRepository userRepository, IConfiguration _configuration)
         {
             _userRepository = userRepository;
+            configuration = _configuration;
         }
         public IActionResult SignIn()
         {
-            if(HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+            if(HttpContext.Session.GetInt32("IsUserLoggedIn") != null)
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -26,22 +29,21 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
         }
         public IActionResult AuthenticateUser(string Email, string Password)
         {
-            bool result = _userRepository.AuthenticateUserFromDB(Email, Password);
-            if (result)
+            var result = _userRepository.AuthenticateUserFromDB(Email, Password);
+            if (result != null)
             {
                 User userData = _userRepository.GetCustomerByEmail(Email);
                 HttpContext.Session.SetString("Email", Email);
                 HttpContext.Session.SetString("UserName", userData.UserName);
                 HttpContext.Session.SetString("Password", Password);
-                HttpContext.Session.SetInt32("IsUserLoggedIn", 1);
-                var useremail = HttpContext.Session.GetString("Email");
+                HttpContext.Session.SetString("IsUserLoggedIn", result.Token.ToString());
                 return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("SignIn", "User");
         }
         public IActionResult SignUp()
         {
-            if (HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+            if (HttpContext.Session.GetString("IsUserLoggedIn") != null)
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -82,10 +84,17 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
         }
         public IActionResult EditCustomer(string UserEmail)
         {
-            if (HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+            if (HttpContext.Session.GetString("IsUserLoggedIn") != null)
             {
-                User userData = _userRepository.GetCustomerByEmail(UserEmail);
-                return View(userData);
+                string token = HttpContext.Session.GetString("IsUserLoggedIn");
+                string configkey = configuration.GetSection("JWT").GetSection("Key").Value;
+                string configissuer = configuration.GetSection("JWT").GetSection("Issuer").Value;
+                if (_userRepository.IsTokenValid(configkey, configissuer, token))
+                {
+                    User userData = _userRepository.GetCustomerByEmail(UserEmail);
+                    return View(userData);
+                }
+                return RedirectToAction("Logout", "User");
             }
             return RedirectToAction("SignIn", "User");
         }
@@ -97,7 +106,6 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
                 HttpContext.Session.SetString("Email", user.Email);
                 HttpContext.Session.SetString("UserName", user.UserName);
                 HttpContext.Session.SetString("Password", user.Password);
-                HttpContext.Session.SetInt32("IsUserLoggedIn", 1);
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -107,7 +115,7 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
         }
         public IActionResult UserProfile(string UserEmail)
         {
-            if (HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+            if (HttpContext.Session.GetString("IsUserLoggedIn") != null)
             {
                 User userData = _userRepository.GetCustomerByEmail(UserEmail);
                 return View(userData);

@@ -1,24 +1,32 @@
 ﻿using Dapper;
 using EverestNerdEducationAndTrainingLLC.IRepositories;
 using EverestNerdEducationAndTrainingLLC.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace EverestNerdEducationAndTrainingLLC.Repositories
 {
     public class UserRepository : IUserRepository
     {
+
+        private readonly IConfiguration configuration;
         private readonly IDbConnection conn;
-        public UserRepository(IDbConnection dbConnection)
+        public UserRepository(IDbConnection dbConnection, IConfiguration _configuration)
         {
-            conn = dbConnection;
+            this.conn = dbConnection;
+            this.configuration = _configuration;   
         }
         public int AddCustomer(User user)
         {
-            string query = "Insert into [User] Values(@UserName, @Email, @Age, @Grade, @ContactNo, @Password, @Interestofstudy) SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY];";
+            string query = "Insert into [User] (UserName, Email, @Age, Grade, ContactNo, Password, Interestofstudy) Values(@UserName, @Email, @Age, @Grade, @ContactNo, @Password, @Interestofstudy) SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY];";
             var _parameter = new Dictionary<string, object>();
             _parameter.Add("@UserName", user.UserName);
             _parameter.Add("@Email", user.Email);
@@ -30,7 +38,7 @@ namespace EverestNerdEducationAndTrainingLLC.Repositories
             var result = conn.Query<int>(query, param: _parameter, commandType: CommandType.Text).FirstOrDefault();
             return result;
         }
-        public bool AuthenticateUserFromDB(string Email, string Password)
+        public Tokens AuthenticateUserFromDB(string Email, string Password)
         {
             try
             {
@@ -43,15 +51,33 @@ namespace EverestNerdEducationAndTrainingLLC.Repositories
                 {
                     if (result.Email == Email && result.Password == Password)
                     {
-                        return true;
+                        string config = configuration.GetSection("JWT").GetSection("Key").Value;
+                        //else we generate JWT Token
+                        var tokenhandler = new JwtSecurityTokenHandler();
+                        var tokenKey = Encoding.UTF8.GetBytes(config);
+
+                        var tokenDescription = new SecurityTokenDescriptor
+                        {
+                            Subject = new System.Security.Claims.ClaimsIdentity(
+                            new Claim[]
+                            {
+                                new Claim(ClaimTypes.Name, Email)
+                            }),
+                            Expires = DateTime.UtcNow.AddMinutes(5),
+                            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
+                        };
+
+                        var token = tokenhandler.CreateToken(tokenDescription);
+
+                        return new Tokens { Token = tokenhandler.WriteToken(token) };
                     }
-                    return false;
+                    return null;
                 }
-                return false;
+                return null;
             }
             catch (Exception ex)
             {
-                return false;
+                return null;
             }
         }
         public int ContactUs(Contact contact)
@@ -87,6 +113,30 @@ namespace EverestNerdEducationAndTrainingLLC.Repositories
             _parameter.Add("Email", UserEmail);
             User result = conn.Query<User>(query, param: _parameter, commandType: CommandType.Text).FirstOrDefault();
             return result;
+        }
+        public bool IsTokenValid(string key, string issuer, string token)
+        {
+            var mySecret = Encoding.UTF8.GetBytes(key);
+            var mySecurityKey = new SymmetricSecurityKey(mySecret);
+            var tokenHandler = new JwtSecurityTokenHandler();
+            try
+            {
+                tokenHandler.ValidateToken(token,
+                new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidIssuer = issuer,
+                    ValidAudience = issuer,
+                    IssuerSigningKey = mySecurityKey,
+                }, out SecurityToken validatedToken);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

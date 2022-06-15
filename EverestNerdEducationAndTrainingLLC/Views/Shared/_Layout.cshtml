@@ -156,7 +156,7 @@
                                             <li><a href="/Home/Events">Events</a></li>
                                         </ul>
                                     </li>
-                                    @if (@Accessor.HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+                                    @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") != null)
                                     {
                                         <li class="nav-item">
                                             <a href="/Payment/Index">Payment</a>
@@ -171,7 +171,7 @@
                                     <li class="nav-item">
                                         <a href="/Home/ContactUs">Contact</a>
                                     </li>
-                                    @if (@Accessor.HttpContext.Session.GetInt32("IsUserLoggedIn") != 1)
+                                    @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") == null)
                                     {
                                         <li class="nav-item">
                                             <a href="/User/SignUp">SignUp</a>
@@ -181,7 +181,7 @@
                                             </ul>
                                         </li>
                                     }
-                                    @if (@Accessor.HttpContext.Session.GetInt32("IsUserLoggedIn") == 1)
+                                    @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") != null)
                                     {
                                         <li class="nav-item">
                                             <a href="#">Profile(@Accessor.HttpContext.Session.GetString("UserName"))</a>
