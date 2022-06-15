@@ -86,14 +86,16 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
         {
             if (HttpContext.Session.GetString("IsUserLoggedIn") != null)
             {
-                string token = HttpContext.Session.GetString("IsUserLoggedIn");
+                /*string token = HttpContext.Session.GetString("IsUserLoggedIn");
                 string configkey = configuration.GetSection("JWT").GetSection("Key").Value;
                 string configissuer = configuration.GetSection("JWT").GetSection("Issuer").Value;
                 if (_userRepository.IsTokenValid(configkey, configissuer, token))
                 {
                     User userData = _userRepository.GetCustomerByEmail(UserEmail);
                     return View(userData);
-                }
+                }*/
+                User userData = _userRepository.GetCustomerByEmail(UserEmail);
+                return View(userData);
                 return RedirectToAction("Logout", "User");
             }
             return RedirectToAction("SignIn", "User");
