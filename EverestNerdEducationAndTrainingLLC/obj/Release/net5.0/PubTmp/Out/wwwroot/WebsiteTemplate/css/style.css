@@ -478,19 +478,19 @@ p {
 
 .navigation{}
 
-.navigation.sticky {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background: #fff;
-	z-index: 999;
-    border-bottom: 1px solid #cecece;
-    -webkit-box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
-    box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
-    -webkit-animation: sticky 2s;
-    animation: sticky 2s;
-}
+    .navigation.sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #07294d;
+        z-index: 999;
+        border-bottom: 1px solid #cecece;
+        -webkit-box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
+        box-shadow: 0px 0px 191px 0px rgba(0,0,0,0.06);
+        -webkit-animation: sticky 2s;
+        animation: sticky 2s;
+    }
 
 @-webkit-keyframes sticky {
     0%{
@@ -528,10 +528,10 @@ p {
 }
 
 .navigation .navbar .navbar-nav li a{
-    font-size: 10px;
+    font-size: 11px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #07294d;
+    font-weight: 800;
+    color: #ffffff;
     text-transform: uppercase;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
@@ -594,7 +594,7 @@ p {
 .navbar .navbar-toggler .icon-bar {
 	width: 30px;
 	height: 2px;
-	background-color: #07294d;
+	background-color: #ffffff;
 	display: block;
 	margin: 5px 0;
     position: relative;

@@ -19,11 +19,17 @@ namespace EverestNerdEducationAndTrainingLLC.Repositories
         public List<ClientFeedBack> GetClientFeedBacks()
         {
             Serilog.Log.Information("GetClientFeedBacks Method Called");
-            
-            string query = "Select * from ClientFeedBack;";
-            var _parameter = new Dictionary<string, object>();
-            List<ClientFeedBack> result = conn.Query<ClientFeedBack>(query, param: _parameter, commandType: CommandType.Text).ToList();
-            return result;
+            try
+            {
+                string query = "Select * from ClientFeedBack;";
+                var _parameter = new Dictionary<string, object>();
+                List<ClientFeedBack> result = conn.Query<ClientFeedBack>(query, param: _parameter, commandType: CommandType.Text).ToList();
+                return result;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

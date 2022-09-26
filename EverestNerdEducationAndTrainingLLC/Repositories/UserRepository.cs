@@ -16,13 +16,12 @@ namespace EverestNerdEducationAndTrainingLLC.Repositories
 {
     public class UserRepository : IUserRepository
     {
-
         private readonly IConfiguration configuration;
         private readonly IDbConnection conn;
         public UserRepository(IDbConnection dbConnection, IConfiguration _configuration)
         {
             this.conn = dbConnection;
-            this.configuration = _configuration;   
+            this.configuration = _configuration;
         }
         public int AddCustomer(User user)
         {

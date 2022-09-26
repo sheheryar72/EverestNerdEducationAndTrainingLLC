@@ -53,3 +53,140 @@ C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducat
 C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Career.cshtml.g.cs
 C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\StudyTips.cshtml.g.cs
 C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Payment\Index.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.Azure.Services.AppAuthentication.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.Identity.Client.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.AspNetCore.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Extensions.Hosting.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Extensions.Logging.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Formatting.Compact.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Settings.Configuration.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.Console.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.Debug.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.File.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.MSSqlServer.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.Runtime.Caching.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Error\Error505.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Error\HttpStatusCodeHandler.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Biology.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\ComputerScience.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Mathemetics.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Physics.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\ReadinAndWriting.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\User\EditCustomer.cshtml.g.cs
+C:\Users\shehe\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\User\UserProfile.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\appsettings.Development.json
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\appsettings.json
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\EverestNerdEducationAndTrainingLLC.exe
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\EverestNerdEducationAndTrainingLLC.deps.json
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\EverestNerdEducationAndTrainingLLC.runtimeconfig.json
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\EverestNerdEducationAndTrainingLLC.runtimeconfig.dev.json
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\EverestNerdEducationAndTrainingLLC.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\EverestNerdEducationAndTrainingLLC.pdb
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\EverestNerdEducationAndTrainingLLC.Views.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\EverestNerdEducationAndTrainingLLC.Views.pdb
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Dapper.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.Azure.Services.AppAuthentication.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.Data.SqlClient.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.Identity.Client.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.AspNetCore.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Extensions.Hosting.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Extensions.Logging.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Formatting.Compact.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Settings.Configuration.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.Console.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.Debug.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.File.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.MSSqlServer.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.Data.SqlClient.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.Runtime.Caching.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\bin\Release\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.csproj.AssemblyReference.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.AssemblyInfoInputs.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.AssemblyInfo.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.csproj.CoreCompileInputs.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.RazorAssemblyInfo.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.RazorAssemblyInfo.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\scopedcss\bundle\EverestNerdEducationAndTrainingLLC.styles.css
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\staticwebassets\EverestNerdEducationAndTrainingLLC.StaticWebAssets.Manifest.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.TagHelpers.input.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.TagHelpers.output.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.RazorCoreGenerate.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Error\Error505.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Error\HttpStatusCodeHandler.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\AboutUs.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Biology.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Career.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\ComputerScience.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\ContactUs.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Events.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Mathemetics.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\News.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\OurPrograms.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\OurTeachers.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\Physics.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\ReadinAndWriting.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Home\StudyTips.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Payment\Index.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\User\EditCustomer.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\User\SignIn.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\User\SignUp.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\User\UserProfile.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.RazorTargetAssemblyInfo.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.RazorTargetAssemblyInfo.cs
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.Views.pdb
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.csproj.CopyComplete
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\refint\EverestNerdEducationAndTrainingLLC.dll
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.pdb
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\EverestNerdEducationAndTrainingLLC.genruntimeconfig.cache
+C:\Users\Sheheryar Izhar\source\repos\EverestNerdEducationAndTrainingLLC\EverestNerdEducationAndTrainingLLC\obj\Release\net5.0\ref\EverestNerdEducationAndTrainingLLC.dll

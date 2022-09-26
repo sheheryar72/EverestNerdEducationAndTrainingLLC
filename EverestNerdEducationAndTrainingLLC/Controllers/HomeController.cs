@@ -21,7 +21,7 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
         {
             Serilog.Log.Information("Index Controller Called");
             var result = _customerFeedBackRepository.GetClientFeedBacks();
-            if(result.Count > 0)
+            if(result != null)
                 return View(result);
             return View();
         }
