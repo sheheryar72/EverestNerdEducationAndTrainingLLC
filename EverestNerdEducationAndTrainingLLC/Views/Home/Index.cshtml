@@ -1,4 +1,9 @@
-﻿@model List<EverestNerdEducationAndTrainingLLC.Models.ClientFeedBack>
+﻿@*@model List<EverestNerdEducationAndTrainingLLC.Models.ClientFeedBack>
+@model List<EverestNerdEducationAndTrainingLLC.Models.Course>*@
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model EverestNerdEducationAndTrainingLLC.Models.HomePageContent
+@*@model dynamic*@
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,18 +36,27 @@
             padding-bottom: 15px;
             text-align: center;
         }
-        @*h1#bannerheading {
-            font-family: 'Montserrat';
-            top: 45%;
-            position: absolute;
-            font-size: 56px;
-            color: black;
-            font-weight: 750;
-            padding-bottom: 15px;
-            text-align: center;
-            left: 5;
-        }*@
+        img#cardimageid {
+        width: 379px;
+        height: 300px;
+        object-fit: fill;
+    }
     </style>
+
+    @*<script>
+        window.localStorage.setItem(“Email”,@Model.footer.Email)    
+        window.localStorage.setItem(“Email”,@Model.footer.Phone)    
+        window.localStorage.setItem(“Email”,@Model.footer.Address)    
+        window.localStorage.setItem(“Email”,@Model.footer.Address)    
+        window.localStorage.setItem(“Email”,@Model.footer.Facebook)    
+        window.localStorage.setItem(“Email”,@Model.footer.Instagram)    
+        window.localStorage.setItem(“Email”,@Model.footer.Google)    
+        window.localStorage.setItem(“Email”,@Model.footer.Twitter)    
+
+        console.log("Footer: ", @Model.footer);
+        console.log("check");
+
+    </script>*@
 
 </head>
 
@@ -147,7 +161,7 @@
                             <img src="~/5.png" alt="New york" style="width:100%;">
                         </div>
                     </div>
-                    <h1 id="bannerheading">Affordable In center & Online Tutoring</h1>
+                    <h1 id="bannerheading">@Model.homePageContentDetails.BannerTitle</h1>
                 </div>
 
                 <!-- Left and right controls -->
@@ -161,33 +175,11 @@
                 </a>
             </div>
         </div>
+        </section>
 
 
+        
 
-        <!--<div class="single-slider bg_cover pt-150" style="background-image: url(https://www.educationtask.com/wp-content/uploads/2017/03/study-in-library.jpg) " data-overlay="4">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-7 col-lg-9">
-                    <div class="slider-cont">
-                        <h1 data-animation="bounceInLeft" data-delay="1s">Choose the right theme for education</h1>
-                        <p data-animation="fadeInUp" data-delay="1.3s">Donec vitae sapien ut libearo venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt  Sed fringilla mauri amet nibh.</p>
-                        <ul>
-                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="#">Read More</a></li>
-                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="#">Get Started</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>-->
-        <!-- row -->
-        <!--</div>--> <!-- container -->
-        <!--</div>--> <!-- single slider -->
-    </section>
-
-    <!--====== SLIDER PART ENDS ======-->
-    <!--====== CATEGORY PART START ======-->
-
-    <!--====== CATEGORY PART ENDS ======-->
-    <!--====== ABOUT PART START ======-->
 
     <section id="about-part" class="pt-65">
         <div class="container">
@@ -195,51 +187,49 @@
                 <div class="col-lg-5">
                     <div class="section-title mt-50">
                         <h5>About us</h5>
-                        <h2>Welcome to Everest Nerd </h2>
+                        <h2>@Model.homePageContentDetails.Title </h2>
                     </div> <!-- section title -->
                     <div class="about-cont">
-                        <p>We at Everest nerd believe in the power of education to improve the quality of life and secure families financially. We have a diverse team working in education, finance, and recruiting. <br> <br> We at Everest nerd believe in the power of education to improve the quality of life and secure families financially. We have a diverse team working in education, finance, and recruiting. Our diverse educational and professional people can help develop a strategy to help you reach your future goals</p>
+                        <p>
+                        @Model.homePageContentDetails.Description
+                        </p>
                         <a href="#" class="main-btn mt-55">Learn More</a>
                     </div>
                 </div> <!-- about cont -->
-                <!--<div class="col-lg-6 offset-lg-1">
-                    <div class="about-event mt-50">
-                        <div class="event-title">
-                            <h3>Upcoming events</h3>
-                        </div>--> <!-- event title -->
-                        <!--<ul>
-                            <li>
-                                <div class="singel-event">
-                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="#"><h4>Campus clean workshop</h4></a>
-                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="singel-event">
-                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="#"><h4>Tech Summit</h4></a>
-                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="singel-event">
-                                    <span><i class="fa fa-calendar"></i> 2 December 2018</span>
-                                    <a href="#"><h4>Enviroement conference</h4></a>
-                                    <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                    <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>--> <!-- about event -->
-                <!--</div>-->
+                
             </div> <!-- row -->
         </div> <!-- container -->
         <div class="about-bg">
             <img src="~/WebsiteTemplate/images/about/bg-1.png" alt="About">
         </div>
+    </section>
+
+    <section style="margin-bottom: 8%; margin-top: 3%">
+        <h1 class="text-center">Why Us</h1>
+        <div class="card-group">
+  <div class="card" style="margin: 2%">
+    <img src="~/card1.png" class="card-img-top" alt="..." id="cardimageid">
+    <div class="card-body">
+      @*<h5 class="card-title">Card title</h5>*@
+      <p class="card-text text-center">@Model.homePageContentDetails.WhyUsBox1</p>
+    </div>
+  </div>
+  <div class="card" style="margin: 2%">
+    <img src="~/card2.png" class="card-img-top" alt="..." id="cardimageid">
+    <div class="card-body">
+      @*<h5 class="card-title">Card title</h5>*@
+      <p class="card-text text-center">@Model.homePageContentDetails.WhyUsBox2 </p>
+    </div>
+  </div>
+  <div class="card" style="margin: 2%">
+    <img src="~/card3.png" class="card-img-top" alt="..." id="cardimageid">
+    <div class="card-body">
+      @*<h5 class="card-title">Card title</h5>*@
+      <p class="card-text text-center">@Model.homePageContentDetails.WhyUsBox3</p>
+    </div>
+  </div>
+</div>
+
     </section>
 
     <!--====== ABOUT PART ENDS ======-->
@@ -252,15 +242,16 @@
                     <div class="col-lg-6">
                         <div class="apply-cont apply-color-1">
                             <h3>Register with us</h3>
-                            <p>Gravida nibh vel velit auctor aliquetn sollicitudirem sem quibibendum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis.</p>
-                            <a href="/User/RegisterUser" class="main-btn">Apply Now</a>
+                            <p>We at Everest nerd believe in the power of education to improve the quality of life and 
+                                secure families financially. </p>
+                            <a href="/User/SignUp/" class="main-btn">Apply Now</a>
                         </div> <!-- apply cont -->
                     </div>
                     <div class="col-lg-6">
                         <div class="apply-cont apply-color-2">
                             <h3>Apply for Addmission</h3>
-                            <p>Gravida nibh vel velit auctor aliquetn sollicitudirem sem quibibendum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis.</p>
-                            <a href="/User/RegisterUser" class="main-btn">Apply Now</a>
+                            <p>Our diverse educational and professional people can help develop a strategy to help you reach your future goals.</p>
+                            <a href="/User/SignUp/" class="main-btn">Apply Now</a>
                         </div> <!-- apply cont -->
                     </div>
                 </div>
@@ -268,9 +259,8 @@
         </div> <!-- container -->
     </section>
 
-    <!--====== APPLY PART ENDS ======-->
-    <!--====== COURSE PART START ======-->
 
+    
     <section id="course-part" class="pt-115 pb-120 gray-bg">
         <div class="container">
             <div class="row">
@@ -282,121 +272,35 @@
                 </div>
             </div> <!-- row -->
             <div class="row course-slied mt-30">
-                <div class="col-lg-4">
+
+                @foreach (var item in Model.courses)
+                {
+                    <div class="col-lg-4">
                     <div class="singel-course">
                         <div class="thum">
                             <div class="image">
-                                <img src="~/WebsiteTemplate/physics.jpg" alt="Course">
+                                <img src="@item.ImagePath" alt="Course">
                             </div>
                             <div class="price">
                                 <span>Free</span>
                             </div>
                         </div>
                         <div class="cont">
-                            <a href="#"><h4>Physics</h4></a>
+                            <a href="#"><h4>@item.Name</h4></a>
                             <div class="course-teacher">
                                 <div class="thum">
-                                    <a href="#"><img src="~/WebsiteTemplate/physics.jpg" alt="teacher"></a>
+                                    <a href="#"><img src="@item.ImagePath" alt="teacher"></a>
                                 </div>
                                 <div class="name">
-                                    <a href="#"><h6>John</h6></a>
+                                    <a href="#"><h6>@item.Teacher</h6></a>
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- singel course -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="~/WebsiteTemplate/biology.jpg" alt="Course">
-                            </div>
-                            <div class="price">
-                                <span>Free</span>
-                            </div>
-                        </div>
-                        <div class="cont">
-                            <a href="#"><h4>Biology</h4></a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="#"><img src="~/WebsiteTemplate/biology.jpg" alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="#"><h6>Sunil Pandey</h6></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- singel course -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="~/WebsiteTemplate/cs.jpg" alt="Course">
-                            </div>
-                            <div class="price">
-                                <span>Free</span>
-                            </div>
-                        </div>
-                        <div class="cont">
-                            <a href="#"><h4>Computer Science</h4></a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="#"><img src="~/WebsiteTemplate/cs.jpg" alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="#"><h6>Anil</h6></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- singel course -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="~/WebsiteTemplate/math.jpg" alt="Course">
-                            </div>
-                            <div class="price">
-                                <span>Free</span>
-                            </div>
-                        </div>
-                        <div class="cont">
-                            <a href="#"><h4>Mathemetics</h4></a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="#"><img src="~/WebsiteTemplate/math.jpg" alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="#"><h6>Elizy Beth</h6></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- singel course -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="~/WebsiteTemplate/readingwriting.png" alt="Course">
-                            </div>
-                            <div class="price">
-                                <span>Free</span>
-                            </div>
-                        </div>
-                        <div class="cont">
-                            <a href="#"><h4>Reading and Writing</h4></a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="#"><img src="~/WebsiteTemplate/readingwriting.png" alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="#"><h6>Veena Malik</h6></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- singel course -->
-                </div>
+                    </div> 
+                </div>        
+                }
+                
+
             </div> <!-- course slied -->
         </div> <!-- container -->
     </section>
@@ -459,297 +363,6 @@
         <div class="feature-bg"></div> <!-- feature bg -->
     </section>
 
-    <!--====== VIDEO FEATURE PART ENDS ======-->
-    <!--====== TEACHERS PART START ======-->
-
-    <section id="teachers-part" class="pt-70 pb-120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="section-title mt-50">
-                        <h5>Featured Teachers</h5>
-                        <h2>Meet Our teachers</h2>
-                    </div> <!-- section title -->
-                    <div class="teachers-cont">
-                        <p>BPS is deeply committed to putting the best teachers in every classroom, for every student, every day. . <br> <br> We know that, in order to have the most talented and effective teachers as part of our team, we must draw from candidates representing diverse educational, cultural, racial, and linguistic backgrounds. As you consider your employment future, we hope you'll consider a career with us. </p>
-                        <a href="/Home/Career" class="main-btn mt-55">Career with us</a>
-                    </div> <!-- teachers cont -->
-                </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <div class="teachers mt-20">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="singel-teachers mt-30 text-center">
-                                    <div class="image">
-                                        <img src="~/WebsiteTemplate/images/teachers/t-1.jpg" alt="Teachers">
-                                    </div>
-                                    <div class="cont">
-                                        <a href="#"><h6>Mark alen</h6></a>
-                                        <span>Vice chencelor</span>
-                                    </div>
-                                </div> <!-- singel teachers -->
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="singel-teachers mt-30 text-center">
-                                    <div class="image">
-                                        <img src="~/WebsiteTemplate/images/teachers/t-2.jpg" alt="Teachers">
-                                    </div>
-                                    <div class="cont">
-                                        <a href="#"><h6>David card</h6></a>
-                                        <span>Pro chencelor</span>
-                                    </div>
-                                </div> <!-- singel teachers -->
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="singel-teachers mt-30 text-center">
-                                    <div class="image">
-                                        <img src="~/WebsiteTemplate/images/teachers/t-3.jpg" alt="Teachers">
-                                    </div>
-                                    <div class="cont">
-                                        <a href="#"><h6>Rebeka alig</h6></a>
-                                        <span>Pro chencelor</span>
-                                    </div>
-                                </div> <!-- singel teachers -->
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="singel-teachers mt-30 text-center">
-                                    <div class="image">
-                                        <img src="~/WebsiteTemplate/images/teachers/t-4.jpg" alt="Teachers">
-                                    </div>
-                                    <div class="cont">
-                                        <a href="#"><h6>Hanna bein</h6></a>
-                                        <span>Aerobics head</span>
-                                    </div>
-                                </div> <!-- singel teachers -->
-                            </div>
-                        </div> <!-- row -->
-                    </div> <!-- teachers -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== TEACHERS PART ENDS ======-->
-    <!--====== PUBLICATION PART START ======-->
-
-    <!--<section id="publication-part" class="pt-115 pb-120 gray-bg">
-        <div class="container">
-            <div class="row align-items-end">
-                <div class="col-lg-6 col-md-8 col-sm-7">
-                    <div class="section-title pb-60">
-                        <h5>Publications</h5>
-                        <h2>From Store </h2>
-                    </div>--> <!-- section title -->
-                <!--</div>
-                <div class="col-lg-6 col-md-4 col-sm-5">
-                    <div class="products-btn text-right pb-60">
-                        <a href="#" class="main-btn">All Products</a>
-                    </div>--> <!-- products btn -->
-                <!--</div>
-            </div>--> <!-- row -->
-            <!--<div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="singel-publication mt-30">
-                        <div class="image">
-                            <img src="~/WebsiteTemplate/images/publication/p-1.jpg" alt="Publication">
-                            <div class="add-cart">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cont">
-                            <div class="name">
-                                <a href="#"><h6>Set for life </h6></a>
-                                <span>By Scott Trench</span>
-                            </div>
-                            <div class="button text-right">
-                                <a href="#" class="main-btn">Buy Now ($50)</a>
-                            </div>
-                        </div>
-                    </div>--> <!-- singel publication -->
-                <!--</div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="singel-publication mt-30">
-                        <div class="image">
-                            <img src="~/WebsiteTemplate/images/publication/p-2.jpg" alt="Publication">
-                            <div class="add-cart">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cont">
-                            <div class="name">
-                                <a href="#"><h6>A Daughters </h6></a>
-                                <span>By Scott Trench</span>
-                            </div>
-                            <div class="button text-right">
-                                <a href="#" class="main-btn">Buy Now ($30)</a>
-                            </div>
-                        </div>
-                    </div>--> <!-- singel publication -->
-                <!--</div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="singel-publication mt-30">
-                        <div class="image">
-                            <img src="~/WebsiteTemplate/images/publication/p-3.jpg" alt="Publication">
-                            <div class="add-cart">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cont">
-                            <div class="name">
-                                <a href="#"><h6>A Magnet </h6></a>
-                                <span>By Scott Trench</span>
-                            </div>
-                            <div class="button text-right">
-                                <a href="#" class="main-btn">Buy Now ($20)</a>
-                            </div>
-                        </div>
-                    </div>--> <!-- singel publication -->
-                <!--</div>
-                <div class="col-lg-3 col-md-6 col-sm-8">
-                    <div class="singel-publication mt-30">
-                        <div class="image">
-                            <img src="~/WebsiteTemplate/images/publication/p-4.jpg" alt="Publication">
-                            <div class="add-cart">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="cont">
-                            <div class="name">
-                                <a href="#"><h6>Pices of light</h6></a>
-                                <span>By Scott Trench</span>
-                            </div>
-                            <div class="button text-right">
-                                <a href="#" class="main-btn">Buy Now ($75)</a>
-                            </div>
-                        </div>
-                    </div>--> <!-- singel publication -->
-                <!--</div>
-            </div>--> <!-- row -->
-        <!--</div>--> <!-- container -->
-    <!--</section>-->
-
-    <!--====== PUBLICATION PART ENDS ======-->
-    <!--====== TEASTIMONIAL PART START ======-->
-
-    <section id="testimonial" class="bg_cover pt-115 pb-115" data-overlay="8" style="background-image: url(https://4axofn288etdd2o6u15iv8h7-wpengine.netdna-ssl.com/wp-content/uploads/2020/12/Dec-4-How-to-Increase-Motivation-and-Collaboration-Among-Staff-During-COVID-19_web-1024x683.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title pb-40">
-                        <h5>Testimonial</h5>
-                        <h2>What people say</h2>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row testimonial-slied mt-40">
-
-                @if (Model != null)
-                {
-                    @foreach (var item in Model)
-                    {
-                        <div class="col-lg-6">
-                            <div class="singel-testimonial">
-                                <div class="testimonial-thum">
-                                    <img src="@item.ImageUrl" alt="Testimonial">
-                                    <div class="quote">
-                                        <i class="fa fa-quote-right"></i>
-                                    </div>
-                                </div>
-                                <div class="testimonial-cont">
-                                    @*<p>@item.Feedback</p>*@
-                                    <h6>@item.Name</h6>
-                                    <span>@item.department</span>
-                                </div>
-                            </div> <!-- singel testimonial -->
-                        </div>
-                    }
-                }
-                @*@if (Model == null)
-                {
-                    <div class="col-lg-6">
-                        <div class="singel-testimonial">
-                            <div class="testimonial-thum">
-                                <img src="~/WebsiteTemplate/images/testimonial/t-2.jpg" alt="Testimonial">
-                                <div class="quote">
-                                    <i class="fa fa-quote-right"></i>
-                                </div>
-                            </div>
-                            <div class="testimonial-cont">
-                                <p>Coming Soon....... </p>
-                                <h6>Rubina Helen</h6>
-                                <span>Bsc, Engineering</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="singel-testimonial">
-                            <div class="testimonial-thum">
-                                <img src="~/WebsiteTemplate/images/testimonial/t-2.jpg" alt="Testimonial">
-                                <div class="quote">
-                                    <i class="fa fa-quote-right"></i>
-                                </div>
-                            </div>
-                            <div class="testimonial-cont">
-                                <p>Coming Soon....... </p>
-                                <h6>Rubina Helen</h6>
-                                <span>Bsc, Engineering</span>
-                            </div>
-                        </div>
-                    </div>
-                }*@
-
-                <!--<div class="col-lg-6">
-    <div class="singel-testimonial">
-        <div class="testimonial-thum">
-            <img src="~/WebsiteTemplate/images/testimonial/t-2.jpg" alt="Testimonial">
-            <div class="quote">
-                <i class="fa fa-quote-right"></i>
-            </div>
-        </div>
-        <div class="testimonial-cont">-->
-                @*<p>Aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet sem nibh id elit sollicitudirem </p>*@
-                <!--<h6>Rubina Helen</h6>
-            <span>Bsc, Engineering</span>
-        </div>
-    </div>-->
-                <!-- singel testimonial -->
-                <!--</div>-->
-                <!--<div class="col-lg-6">
-    <div class="singel-testimonial">
-        <div class="testimonial-thum">
-            <img src="~/WebsiteTemplate/images/testimonial/t-3.jpg" alt="Testimonial">
-            <div class="quote">
-                <i class="fa fa-quote-right"></i>
-            </div>
-        </div>
-        <div class="testimonial-cont">-->
-                @*<p>Aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet sem nibh id elit sollicitudirem </p>*@
-                <!--<h6>Rubina Helen</h6>
-            <span>Bsc, Engineering</span>
-        </div>
-    </div>-->
-                <!-- singel testimonial -->
-                <!--</div>-->
-
-
-            </div> <!-- testimonial slied -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== TEASTIMONIAL PART ENDS ======-->
-    <!--====== NEWS PART START ======-->
 
     <section id="news-part" class="pt-115 pb-110">
         <div class="container">
@@ -768,12 +381,12 @@
                             <img src="~/WebsiteTemplate/images/news/n-1.jpg" alt="News">
                         </div>
                         <div class="news-cont">
-                            <ul>
+                            @*<ul>
                                 <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
                                 <li><a href="#"> <span>By</span> Adam linn</a></li>
-                            </ul>
-                            <a href="#"><h3>Tips to grade high cgpa in university life</h3></a>
-                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt .</p>
+                            </ul>*@
+                            <a href="#"><h3>@Model.homePageContentDetails.LatestNewsTitle</h3></a>
+                            <p>@Model.homePageContentDetails.LatestNewsDescription</p>
                         </div>
                     </div> <!-- singel news -->
                 </div>
@@ -787,12 +400,12 @@
                             </div>
                             <div class="col-sm-8">
                                 <div class="news-cont mt-30">
-                                    <ul>
+                                    @*<ul>
                                         <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
                                         <li><a href="#"> <span>By</span> Adam linn</a></li>
-                                    </ul>
-                                    <a href="#"><h3>Intellectual communication</h3></a>
-                                    <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
+                                    </ul>*@
+                                    <a href="#"><h3>@Model.homePageContentDetails.LatestNewsTitle1</h3></a>
+                                    <p>@Model.homePageContentDetails.LatestNewsDescription1</p>
                                 </div>
                             </div>
                         </div> <!-- row -->
@@ -810,8 +423,8 @@
                                         <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
                                         <li><a href="#"> <span>By</span> Adam linn</a></li>
                                     </ul>
-                                    <a href="#"><h3>Study makes you perfect</h3></a>
-                                    <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
+                                    <a href="#"><h3>@Model.homePageContentDetails.LatestNewsTitle2</h3></a>
+                                    <p>@Model.homePageContentDetails.LatestNewsDescription2</p>
                                 </div>
                             </div>
                         </div> <!-- row -->
@@ -825,12 +438,8 @@
                             </div>
                             <div class="col-sm-8">
                                 <div class="news-cont mt-30">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                                        <li><a href="#"> <span>By</span> Adam linn</a></li>
-                                    </ul>
-                                    <a href="#"><h3>Technology edcution is now....</h3></a>
-                                    <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons  vel.</p>
+                                    <a href="#"><h3>@Model.homePageContentDetails.LatestNewsTitle3</h3></a>
+                                    <p>@Model.homePageContentDetails.LatestNewsDescription3</p>
                                 </div>
                             </div>
                         </div> <!-- row -->
@@ -840,9 +449,18 @@
         </div> <!-- container -->
     </section>
 
+    <div class="text-center">
+        @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") != null)
+        {
+        <button class="btn btn-primary"><a href="/Home/EditHomePage/" style="color: white">Edit Home Page</a></button>
+        }
+    </div>
+
     @*Footer Past Here*@
 
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    
 
     <!--====== BACK TO TP PART ENDS ======-->
     <!--====== jquery js ======-->

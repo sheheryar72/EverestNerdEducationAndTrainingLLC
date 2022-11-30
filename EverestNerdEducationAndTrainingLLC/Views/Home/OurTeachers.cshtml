@@ -1,4 +1,8 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model List<EverestNerdEducationAndTrainingLLC.Models.Teacher>
+
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -46,33 +50,6 @@
                 opacity: 0.7;
             }
     </style>
-
-    <!--====== Title ======-->
-    <!--<title>Edubin - LMS Education HTML Template</title>-->
-    <!--====== Favicon Icon ======-->
-    <!--<link rel="shortcut icon" href="~/WebsiteTemplate/images/favicon.png" type="image/png">-->
-    <!--====== Slick css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/slick.css">-->
-    <!--====== Animate css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/animate.css">-->
-    <!--====== Nice Select css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/nice-select.css">-->
-    <!--====== Nice Number css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/jquery.nice-number.min.css">-->
-    <!--====== Magnific Popup css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/magnific-popup.css">-->
-    <!--====== Bootstrap css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/bootstrap.min.css">-->
-    <!--====== Fontawesome css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/font-awesome.min.css">-->
-    <!--====== Default css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/default.css">-->
-    <!--====== Style css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/style.css">-->
-    <!--====== Responsive css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/responsive.css">-->
-
-
 </head>
 
 <body>
@@ -130,52 +107,109 @@
     <!--====== TEACHERS PART START ======-->
 
     <section>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+       
+        
+        <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
 
                 <div class="card">
-                    <img src="~/WebsiteTemplate/Hnet.com-image.jpg" alt="John" style="width:100%">
-                    <h1>Sunil Pandey</h1>
-                    <p class="title">M.sc Biological Sciences</p>
-                    @*<p>Harvard University</p>*@
+                    <img src="@Model[0].ImageUrl" alt="John" style="width:100%">
+                    <h1>@Model[0].Name</h1>
+                    <p class="title">@Model[0].Profession</p>
                     <div style="margin: 24px 0;">
                         <a href="#"><i class="fa fa-dribbble"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                     </div>
-                    @*<p><button>Contact</button></p>*@
                     <p>
-                        I have been biology teachers at higher secondary and undergraduate level. I am instructing
-                        “Biology of Microorganisms” class at George Mason University. My motto is to teach to student
-                        how to learn. I am always interested to help younger generation to achieve their educational
-                        goals. Write us a message and briefly tell us about your goal so we can create a personalized
-                        lesson plan for you.
+                        @Model[0].Discription
                     </p>
                 </div>
 
             </div>
         </div>
 
-        <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
 
                 <div class="card">
-                    <img src="~/WebsiteTemplate/Hnet.com-image21.jpg" alt="John" style="width:100%">
-                    <h1>Tej Sharma</h1>
-                    <p class="title">M.sc Physics</p>
-                    @*<p>Harvard University</p>*@
+                    <img src="@Model[1].ImageUrl" alt="John" style="width:100%">
+                    <h1>@Model[1].Name</h1>
+                    <p class="title">@Model[1].Profession</p>
                     <div style="margin: 24px 0;">
                         <a href="#"><i class="fa fa-dribbble"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                     </div>
-                    @*<p><button>Contact</button></p>*@
+                    <p>
+                        @Model[1].Discription
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+
+                <div class="card">
+                    <img src="@Model[2].ImageUrl" alt="John" style="width:100%">
+                    <h1>@Model[2].Name</h1>
+                    <p class="title">@Model[2].Profession</p>
+                    <div style="margin: 24px 0;">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <p>
+                        @Model[2].Discription
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+
+                <div class="card">
+                    <img src="@Model[3].ImageUrl" alt="John" style="width:100%">
+                    <h1>@Model[3].Name</h1>
+                    <p class="title">@Model[3].Profession</p>
+                    <div style="margin: 24px 0;">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                    <p>
+                        @Model[3].Discription
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        
+
+        @*<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+
+                <div class="card">
+                    <img src="~/WebsiteTemplate/Hnet.com-image21.jpg" alt="John" style="width:100%">
+                    <h1>Tej Sharma</h1>
+                    <p class="title">M.sc Physics</p>
+                    <div style="margin: 24px 0;">
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
                 <p>
-                    Tej Sharma is a Ph.D. candidate at the Department of Physics at Florida International University, specializing in biophysics and bioinformatics. He is highly interested in data science and data analysis too. Previously he taught physics at Queens College in NY as an adjunct lecturer. In addition, he had experience lecturing physics in undergraduate level in Nepal and USA.
+                    Tej Sharma is a Ph.D. candidate at the Department of Physics at Florida International University, specializing 
+                    in biophysics and bioinformatics. He is highly interested in data science and data analysis too. Previously he 
+                    taught physics at Queens College in NY as an adjunct lecturer. In addition, he had experience lecturing physics
+                    in undergraduate level in Nepal and USA.
                 </p>
                 </div>
 
@@ -190,16 +224,16 @@
                     <img src="~/WebsiteTemplate/Hnet.com-imagedd.jpg" alt="John" style="width:100%">
                     <h1>Bishwoyog Bhattarai</h1>
                     <p class="title">M.sc Biology</p>
-                    @*<p>Harvard University</p>*@
                     <div style="margin: 24px 0;">
                         <a href="#"><i class="fa fa-dribbble"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                     </div>
-                    @*<p><button>Contact</button></p>*@
                 <p>
-                    Bishwoyog Bhattarai is Ph.D. candidate at Texas Tech University. He has experience teaching mathematics and agriculture to higher secondary and undergraduate level students in United states and Nepal.  His research focus is to understand the physiological and molecular basis of drought and heat tolerance in peanut and cotton.
+                    Bishwoyog Bhattarai is Ph.D. candidate at Texas Tech University. He has experience teaching mathematics and 
+                    agriculture to higher secondary and undergraduate level students in United states and Nepal.  His research focus
+                    is to understand the physiological and molecular basis of drought and heat tolerance in peanut and cotton.
                 </p>
                 </div>
 
@@ -214,38 +248,50 @@
                     <img src="~/WebsiteTemplate/images/teachers/t-5.jpg" alt="John" style="width:100%">
                     <h1>Mark John</h1>
                     <p class="title">Aerobics Head</p>
-                    @*<p>Harvard University</p>*@
                     <div style="margin: 24px 0;">
                         <a href="#"><i class="fa fa-dribbble"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                     </div>
-                    @*<p><button>Contact</button></p>*@
                 <p>
-                    Mark John is Ph.D. candidate at Texas Tech University. He has experience teaching mathematics and agriculture to higher secondary and undergraduate level students in United states and Nepal.  His research focus is to understand the physiological and molecular basis of drought and heat tolerance in peanut and cotton.
+                    Mark John is Ph.D. candidate at Texas Tech University. He has experience teaching mathematics and agriculture to 
+                    higher secondary and undergraduate level students in United states and Nepal.  His research focus is to 
+                    understand the physiological and molecular basis of drought and heat tolerance in peanut and cotton.
                 </p>
                 </div>
 
             </div>
-        </div>
+        </div>*@
+
+
     </section>
 
     <section id="teachers-page" class="pt-90 pb-120 gray-bg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-sm-6">
                     <div class="singel-teachers mt-30 text-center">
                         <div class="image">
-                            <img src="~/WebsiteTemplate/Hnet.com-image.jpg" alt="Teachers">
+                            <img src="@item.ImageUrl" alt="Teachers">
                         </div>
                         <div class="cont">
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><h6>Sunil Pandey</h6></a>
-                            <span>M.sc Biological Sciences</span>
+                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter@(item.Id)"><h6>@item.Name</h6></a>
+                            <span>@item.Profession</span>
+                                @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") != null)
+                                {
+                                <button class="btn btn-primary"><a href="/Home/EditTeacher/@item.Id" style="color: white">Edit</a></button>
+                                }
                         </div>
                     </div> <!-- singel teachers -->
                 </div>
-                <div class="col-lg-3 col-sm-6">
+                }
+
+
+                @*<div class="col-lg-3 col-sm-6">
                     <div class="singel-teachers mt-30 text-center">
                         <div class="image">
                             <img src="~/WebsiteTemplate/Hnet.com-image21.jpg" alt="Teachers">
@@ -256,6 +302,8 @@
                         </div>
                     </div> <!-- singel teachers -->
                 </div>
+
+
                 <div class="col-lg-3 col-sm-6">
                     <div class="singel-teachers mt-30 text-center">
                         <div class="image">
@@ -278,53 +326,7 @@
                             <span>Aerobics head</span>
                         </div>
                     </div> <!-- singel teachers -->
-                </div>
-
-
-                <!--<div class="col-lg-3 col-sm-6">
-                    <div class="singel-teachers mt-30 text-center">
-                        <div class="image">
-                            <img src="~/WebsiteTemplate/images/teachers/t-5.jpg" alt="Teachers">
-                        </div>
-                        <div class="cont">
-                            <a href="teachers-singel.html"><h6>David card </h6></a>
-                            <span>Pro chencelor</span>
-                        </div>
-                    </div>--> <!-- singel teachers -->
-                <!--</div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="singel-teachers mt-30 text-center">
-                        <div class="image">
-                            <img src="~/WebsiteTemplate/images/teachers/t-6.jpg" alt="Teachers">
-                        </div>
-                        <div class="cont">
-                            <a href="#"><h6>Mark alen</h6></a>
-                            <span>Vice chencelor</span>
-                        </div>
-                    </div>--> <!-- singel teachers -->
-                <!--</div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="singel-teachers mt-30 text-center">
-                        <div class="image">
-                            <img src="~/WebsiteTemplate/images/teachers/t-7.jpg" alt="Teachers">
-                        </div>
-                        <div class="cont">
-                            <a href="#"><h6>Rebeka alig</h6></a>
-                            <span>Pro chencelor</span>
-                        </div>
-                    </div>--> <!-- singel teachers -->
-                <!--</div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="singel-teachers mt-30 text-center">
-                        <div class="image">
-                            <img src="~/WebsiteTemplate/images/teachers/t-8.jpg" alt="Teachers">
-                        </div>
-                        <div class="cont">
-                            <a href="#"><h6>Hanna bein</h6></a>
-                            <span>Aerobics head</span>
-                        </div>
-                    </div>--> <!-- singel teachers -->
-                <!--</div>-->
+                </div>*@
 
 
             </div> <!-- row -->
@@ -351,6 +353,8 @@
             </div>  <!-- row -->
         </div> <!-- container -->
     </section>
+
+
 
     <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EverestNerdEducationAndTrainingLLC.IRepositories;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,15 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
 {
     public class PaymentController : Controller
     {
+        private readonly IWebsiteContent _websiteContent;
+        public PaymentController(IWebsiteContent websiteContent)
+        {
+            _websiteContent = websiteContent;
+        }
         public IActionResult Index()
         {
-            return View();
+            var result = _websiteContent.GetBankDetails();
+            return View(result);
         }
     }
 }

@@ -34,14 +34,18 @@ namespace EverestNerdEducationAndTrainingLLC
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddTransient<IUserRepository>(provider => new UserRepository(new SqlConnection(connectionString), Configuration));
             services.AddTransient<ICustomerFeedBackRepository>(provider => new CustomerFeedBackRepository(new SqlConnection(connectionString)));
+            services.AddTransient<IWebsiteContent>(provider => new WebsiteContent(new SqlConnection(connectionString)));
+            services.AddTransient<IJobRepository>(provider => new JobRepository(new SqlConnection(connectionString)));
             services.AddControllersWithViews();
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(5);
+                options.IdleTimeout = TimeSpan.FromDays(365);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });
+
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.AddDistributedMemoryCache();
 

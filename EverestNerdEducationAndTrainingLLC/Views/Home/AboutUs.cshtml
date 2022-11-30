@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿@model EverestNerdEducationAndTrainingLLC.Models.AboutUs
+<!doctype html>
 <html lang="en">
 <head>
 
@@ -107,10 +108,10 @@
                 <div class="col-lg-5">
                     <div class="section-title mt-50">
                         <h5>About us</h5>
-                        <h2>Welcome to Everest Nerd </h2>
+                        <h2>@Model.Title</h2>
                     </div> <!-- section title -->
                     <div class="about-cont">
-                        <p>We at Everest nerd believe in the power of education to improve the quality of life and secure families financially. We have a diverse team working in education, finance, and recruiting. Our diverse educational and professional people can help develop a strategy to help you reach your future goals.</p>
+                        <p>@Model.Discription</p>
                     </div>
                 </div> <!-- about cont -->
                 <div class="col-lg-7">
@@ -125,21 +126,21 @@
                         <div class="about-singel-items mt-30">
                             <span>01</span>
                             <h4>Why Choose us</h4>
-                            <p>We at Everest nerd believe in the power of education to improve the quality of life and secure families financially</p>
+                            <p>@Model.WhyChooseUs</p>
                         </div> <!-- about singel -->
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-10">
                         <div class="about-singel-items mt-30">
                             <span>02</span>
                             <h4>Our Mission</h4>
-                            <p>We at Everest nerd believe in the power of education to improve the quality of life and secure families financially</p>
+                            <p>@Model.OurMission</p>
                         </div> <!-- about singel -->
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-10">
                         <div class="about-singel-items mt-30">
                             <span>03</span>
                             <h4>Our vission</h4>
-                            <p>We at Everest nerd believe in the power of education to improve the quality of life and secure families financially</p>
+                            <p>@Model.OurVission</p>
                         </div> <!-- about singel -->
                     </div>
                 </div> <!-- row -->
@@ -155,25 +156,25 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="singel-counter text-center mt-40">
-                        <span><span class="counter">30,000</span>+</span>
+                        <span><span class="counter">@Model.StudentsEnrolled</span>+</span>
                         <p>Students enrolled</p>
                     </div> <!-- singel counter -->
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="singel-counter text-center mt-40">
-                        <span><span class="counter">41,000</span>+</span>
+                        <span><span class="counter">@Model.CoursesUploaded</span>+</span>
                         <p>Courses Uploaded</p>
                     </div> <!-- singel counter -->
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="singel-counter text-center mt-40">
-                        <span><span class="counter">11,000</span>+</span>
+                        <span><span class="counter">@Model.PeopleCertifie</span>+</span>
                         <p>People certifie</p>
                     </div> <!-- singel counter -->
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="singel-counter text-center mt-40">
-                        <span><span class="counter">39,000</span>+</span>
+                        <span><span class="counter">@Model.GlobalTeachers</span>+</span>
                         <p>Global Teachers</p>
                     </div> <!-- singel counter -->
                 </div>
@@ -184,7 +185,7 @@
     <!--====== COUNTER PART ENDS ======-->
     <!--====== TEACHERS PART START ======-->
 
-    <section id="teachers-part" class="pt-65 pb-120">
+    @*<section id="teachers-part" class="pt-65 pb-120">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
@@ -285,12 +286,12 @@
                 </div>
             </div> <!-- row -->
         </div> <!-- container -->
-    </section>
+    </section>*@
 
     <!--====== TEACHERS PART ENDS ======-->
     <!--====== TEASTIMONIAL PART START ======-->
 
-    <section id="testimonial" class="bg_cover pt-115 pb-120" data-overlay="8" style="background-image: url(https://www.screenflex.com/wp-content/uploads/2020/02/Library-edited2-R0-Library-02.jpg)">
+    @*<section id="testimonial" class="bg_cover pt-115 pb-120" data-overlay="8" style="background-image: url(https://www.screenflex.com/wp-content/uploads/2020/02/Library-edited2-R0-Library-02.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -348,7 +349,7 @@
                 </div>
             </div> <!-- testimonial slied -->
         </div> <!-- container -->
-    </section>
+    </section>*@
 
     <!--====== FOOTER PART ENDS ======-->
     <!--====== BACK TO TOP PART START ======-->

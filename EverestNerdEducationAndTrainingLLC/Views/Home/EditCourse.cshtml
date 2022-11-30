@@ -1,0 +1,24 @@
+﻿@model EverestNerdEducationAndTrainingLLC.Models.Course
+
+<section style="padding: 5%">
+    <div class="text-center">
+        <h3>Edit Course</h3>
+</div>
+    <form method="post" action="/Home/EditCourseInDB">
+  <div class="form-group">
+      <input type="hidden" name="Id" value="@Model.Id"/>
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" class="form-control" name="Name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" value="@Model.Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">PhTeacherone</label>
+    <input type="text" class="form-control" name="Teacher" id="exampleInputPassword1" placeholder="Teacher" value="@Model.Teacher">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Discription</label>
+    <input type="text" class="form-control" name="Discription" id="exampleInputPassword1" placeholder="Discription" value="@Model.Discription">
+  </div>
+  <button type="submit" class="btn btn-primary" style="margin-top: 2%">Update Course</button>
+</form>
+</section>
+

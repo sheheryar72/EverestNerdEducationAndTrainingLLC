@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace EverestNerdEducationAndTrainingLLC.Controllers
@@ -71,16 +73,30 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
         }
         public IActionResult ContactUs(Contact contact)
         {
-            if (ModelState.IsValid)
+            int data = _userRepository.ContactUs(contact);
+            SendEmail(contact);
+            return RedirectToAction("Index", "Home");
+        }
+        public void SendEmail(Contact contactData)
+        {
+            try
             {
-                int data = _userRepository.ContactUs(contact);
-                if(data > 0)
-                {
-                    return RedirectToAction("Index", "Home");
-                }
-                return RedirectToAction("ContactUs", "Home");
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("everestnedredu@gmail.com");
+                message.To.Add(new MailAddress("everestnedredu@gmail.com"));
+                message.Subject = contactData.Subject;
+                message.IsBodyHtml = true; //to make message body as html  
+                message.Body = "<div style='text-align:center'><h1>Contact Details</h1><strong>From: </strong><p>http://everestedunow.com/</p></div><br/><br/><strong>Name:</strong> " + contactData.Name + "<br><strong>Email:</strong> " + contactData.Email + "<br><strong>Subjecct: :</strong>" + contactData.Subject + "<br><strong>Message:</strong> " + contactData.Message;
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com"; //for gmail host  
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("everestnedredu@gmail.com", "zvqgmsqgbjllwdca");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
             }
-            return RedirectToAction("ContactUs", "Home");
+            catch (Exception) { }
         }
         public IActionResult EditCustomer(string UserEmail)
         {
@@ -124,5 +140,24 @@ namespace EverestNerdEducationAndTrainingLLC.Controllers
             }
             return RedirectToAction("SignIn", "User");
         }
+        /*public IActionResult EditFooter()
+        {
+            var footer = _userRepository.GetFooterById(1);
+            return View(footer);
+        }
+        public IActionResult EditFooterInDB(Footer footer)
+        {
+            if (HttpContext.Session.GetString("IsUserLoggedIn") != null)
+            {
+                int footerId = _userRepository.EditFooterInDB(footer);
+                if (footerId == null)
+                {
+                    return RedirectToAction("Home", "Index");
+                }
+                return RedirectToAction("Logout", "User");
+            }
+            return RedirectToAction("SignIn", "User");
+        }*/
+
     }   
 }

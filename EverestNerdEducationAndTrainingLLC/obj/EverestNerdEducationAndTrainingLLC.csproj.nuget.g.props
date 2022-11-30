@@ -12,4 +12,8 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\Sheheryar Izhar\.nuget\packages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\Sheheryar Izhar\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgEO_WebBrowser Condition=" '$(PkgEO_WebBrowser)' == '' ">C:\Users\Sheheryar Izhar\.nuget\packages\eo.webbrowser\22.2.79</PkgEO_WebBrowser>
+  </PropertyGroup>
 </Project>

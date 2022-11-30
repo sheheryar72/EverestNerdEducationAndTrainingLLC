@@ -1,0 +1,76 @@
+﻿@model EverestNerdEducationAndTrainingLLC.Models.HomePageContentDetails
+
+<section style="padding: 5%">
+    <div class="text-center">
+        <h3>Edit Home Page</h3>
+</div>
+    <form method="post" action="/Home/UpdateHomePage/">
+  <div class="form-group">
+      <input type="hidden" name="Id" value="@Model.Id"/>
+    <label for="exampleInputEmail1">Banner Title</label>
+    <input type="text" class="form-control" name="BannerTitle" id="exampleInputEmail1"  aria-describedby="emailHelp" placeholder="BannerTitle" value="@Model.BannerTitle">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Title</label>
+    <input type="text" class="form-control" name="Title" id="exampleInputPassword1" placeholder="Title" value="@Model.Title">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Description</label>
+    <input type="text" class="form-control" name="Description" id="exampleInputPassword1" placeholder="Description" value="@Model.Description">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">WhyUsBox1</label>
+    <input type="text" class="form-control" name="WhyUsBox1" id="exampleInputPassword1" placeholder="WhyUsBox1" value="@Model.WhyUsBox1">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">WhyUsBox2</label>
+    <input type="text" class="form-control" name="WhyUsBox2" id="exampleInputCatagory" placeholder="WhyUsBox2" value="@Model.WhyUsBox2">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">WhyUsBox3</label>
+    <input type="text" class="form-control" name="WhyUsBox3" id="exampleInputCatagory" placeholder="WhyUsBox3" value="@Model.WhyUsBox3">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">RegisterWithUs</label>
+    <input type="text" class="form-control" name="RegisterWithUs" id="exampleInputCatagory" placeholder="RegisterWithUs" value="@Model.RegisterWithUs">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">ApplyFor</label>
+    <input type="text" class="form-control" name="ApplyFor" id="exampleInputCatagory" placeholder="ApplyFor" value="@Model.ApplyFor">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">LatestNewsTitle</label>
+    <input type="text" class="form-control" name="LatestNewsTitle" id="exampleInputCatagory" placeholder="LatestNewsTitle" value="@Model.LatestNewsTitle">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">LatestNewsDescription3</label>
+    <input type="text" class="form-control" name="LatestNewsDescription" id="exampleInputCatagory" placeholder="Date" value="@Model.LatestNewsDescription">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">LatestNewsTitle1</label>
+    <input type="text" class="form-control" name="LatestNewsTitle1" id="exampleInputCatagory" placeholder="LatestNewsTitle1" value="@Model.LatestNewsTitle1">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">LatestNewsDescription1</label>
+    <input type="text" class="form-control" name="LatestNewsDescription1" id="exampleInputCatagory" placeholder="LatestNewsDescription1" value="@Model.LatestNewsDescription1">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">LatestNewsTitle2</label>
+    <input type="text" class="form-control" name="LatestNewsTitle2" id="exampleInputCatagory" placeholder="LatestNewsTitle2" value="@Model.LatestNewsTitle2">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">LatestNewsDescription2</label>
+    <input type="text" class="form-control" name="LatestNewsDescription2" id="exampleInputCatagory" placeholder="LatestNewsDescription2" value="@Model.LatestNewsDescription2">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">LatestNewsTitle3</label>
+    <input type="text" class="form-control" name="LatestNewsTitle3" id="exampleInputCatagory" placeholder="LatestNewsTitle3" value="@Model.LatestNewsTitle3">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">LatestNewsDescription3</label>
+    <input type="text" class="form-control" name="LatestNewsDescription3" id="exampleInputCatagory" placeholder="LatestNewsDescription3" value="@Model.LatestNewsDescription3">
+  </div>
+  <button type="submit" class="btn btn-primary" style="margin-top: 2%">Update Home Page Details</button>
+</form>
+</section>
+

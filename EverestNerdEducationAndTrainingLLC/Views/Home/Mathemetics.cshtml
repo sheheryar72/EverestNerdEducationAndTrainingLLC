@@ -1,4 +1,7 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model EverestNerdEducationAndTrainingLLC.Models.Course
+<!doctype html>
 <html lang="en">
 <head>
 
@@ -9,40 +12,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--====== Title ======-->
-    <!--<title>Everest Nerd Education and Learning</title>-->
+    <title>Everest Nerd Education and Learning</title>
 
     <!--====== Favicon Icon ======-->
-    <!--<link rel="shortcut icon" href="~/WebsiteTemplate/images/favicon.png" type="image/png">-->
+    <link rel="shortcut icon" href="~/WebsiteTemplate/images/favicon.png" type="image/png">
 
     <!--====== Slick css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/slick.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/slick.css">
 
     <!--====== Animate css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/animate.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/animate.css">
 
     <!--====== Nice Select css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/nice-select.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/nice-select.css">
 
     <!--====== Nice Number css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/jquery.nice-number.min.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/jquery.nice-number.min.css">
 
     <!--====== Magnific Popup css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/magnific-popup.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/magnific-popup.css">
 
     <!--====== Bootstrap css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/bootstrap.min.css">
 
     <!--====== Fontawesome css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/font-awesome.min.css">
 
     <!--====== Default css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/default.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/default.css">
 
     <!--====== Style css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/style.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/style.css">
 
     <!--====== Responsive css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/responsive.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/responsive.css">
 
 
 </head>
@@ -74,9 +77,9 @@
                 <input type="text" placeholder="Search by keyword">
                 <button><i class="fa fa-search"></i></button>
             </form>
-        </div>-->
-    <!-- serach form -->
+        </div>--> <!-- serach form -->
     <!--</div>-->
+
     <!--====== SEARCH BOX PART ENDS ======-->
     <!--====== PAGE BANNER PART START ======-->
 
@@ -85,11 +88,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-banner-cont">
-                        <h2>Mathmetics</h2>
+                        <h2>@Model.Name</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Mathmetics</li>
+                                <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
                             </ol>
                         </nav>
                     </div>  <!-- page banner cont -->
@@ -107,60 +110,63 @@
                 <div class="col-lg-8">
                     <div class="singel-blog mt-30">
                         <div class="blog-thum">
-                            <img src="~/WebsiteTemplate/math.jpg" alt="Blog">
+                            <img src="@Model.ImagePath" alt="Blog">
                         </div>
                         <div class="blog-cont">
-                            <a href="#"><h3>Mathmetics</h3></a>
+                            <a href="#"><h3>@Model.Name</h3></a>
                             <ul>
-                                <li><a href="#"><i class="fa fa-calendar"></i>1 jun 2022</a></li>
-                                <li><a href="#"><i class="fa fa-user"></i>Elizy Beth</a></li>
+                                <li><a href="#"><i class="fa fa-calendar"></i>1 Jun 2022</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i>@Model.Teacher</a></li>
                                 <li><a href="#"><i class="fa fa-tags"></i>Education</a></li>
                             </ul>
-                            <p>Mathematics is the science and study of quality, structure, space, and change. Mathematicians seek out patterns, formulate new conjectures, and establish truth by rigorous deduction from appropriately chosen axioms and definitions. <br /><br /> There is debate over whether mathematical objects such as numbers and points exist naturally or are human creations. The mathematician Benjamin Peirce called mathematics "the science that draws necessary conclusions". Albert Einstein, on the other hand, stated that "as far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality."<br /><br />Through abstraction and logical reasoning mathematics evolved from counting, calculation, measurement, and the systematic study of the shapes and motions of physical objects. Practical mathematics has been a human activity for as far back as written records exist. Rigorous arguments first appeared in Greek mathematics, most notably in Euclid's Elements. Mathematics continued to develop, in fitful bursts, until the Renaissance, when mathematical innovations interacted with new scientific discoveries, leading to an acceleration in research that continues to the present day.<br /><br />Today, mathematics is used throughout the world as an essential tool in many fields, including natural science, engineering, medicine, and the social sciences. Applied mathematics, the branch of mathematics concerned with application of mathematical knowledge to other fields, inspires and makes use of new mathematical discoveries and sometimes leads to the development of entirely new disciplines. Mathematicians also engage in pure mathematics, or mathematics for its own sake, without having any application in mind, although practical applications for what began as pure mathematics are often discovered later.    </p>
+                            <p>@Model.Discription</p>
+                            @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") != null){
+                            <button class="btn btn-primary"><a href="/Home/EditCourse/@Model.Id" style="color: white">Edit</a></button>
+                            }
                         </div>
                     </div> <!-- singel blog -->
                     @*<div class="singel-blog mt-30">
-                            <div class="blog-thum">
-                                <img src="~/WebsiteTemplate/images/blog/b-2.jpg" alt="Blog">
-                            </div>
-                            <div class="blog-cont">
-                                <a href="#"><h3>Few tips for get better results in examination</h3></a>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-calendar"></i>25 Dec 2018</a></li>
-                                    <li><a href="#"><i class="fa fa-user"></i>Mark anthem</a></li>
-                                    <li><a href="#"><i class="fa fa-tags"></i>Education</a></li>
-                                </ul>
-                                <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .</p>
-                            </div>
-                        </div>*@ <!-- singel blog -->
-                    @*<nav class="courses-pagination mt-50">
-                            <ul class="pagination justify-content-lg-end justify-content-center">
-                                <li class="page-item">
-                                    <a href="#" aria-label="Previous">
-                                        <i class="fa fa-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="active" href="#">1</a></li>
-                                <li class="page-item"><a href="#">2</a></li>
-                                <li class="page-item"><a href="#">3</a></li>
-                                <li class="page-item">
-                                    <a href="#" aria-label="Next">
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </li>
+                        <div class="blog-thum">
+                            <img src="~/WebsiteTemplate/images/blog/b-2.jpg" alt="Blog">
+                        </div>
+                        <div class="blog-cont">
+                            <a href="#"><h3>Few tips for get better results in examination</h3></a>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-calendar"></i>25 Dec 2018</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i>Mark anthem</a></li>
+                                <li><a href="#"><i class="fa fa-tags"></i>Education</a></li>
                             </ul>
-                        </nav>*@  <!-- courses pagination -->
+                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .</p>
+                        </div>
+                    </div>*@ <!-- singel blog -->
+                    @*<nav class="courses-pagination mt-50">
+                        <ul class="pagination justify-content-lg-end justify-content-center">
+                            <li class="page-item">
+                                <a href="#" aria-label="Previous">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="active" href="#">1</a></li>
+                            <li class="page-item"><a href="#">2</a></li>
+                            <li class="page-item"><a href="#">3</a></li>
+                            <li class="page-item">
+                                <a href="#" aria-label="Next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>*@  <!-- courses pagination -->
                 </div>
                 <div class="col-lg-4">
                     <div class="saidbar">
                         <div class="row">
                             <div class="col-lg-12 col-md-6">
                                 @*<div class="saidbar-search mt-30">
-                                        <form action="#">
-                                            <input type="text" placeholder="Search">
-                                            <button type="button"><i class="fa fa-search"></i></button>
-                                        </form>
-                                    </div>*@ <!-- saidbar search -->
+                                    <form action="#">
+                                        <input type="text" placeholder="Search">
+                                        <button type="button"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>*@ <!-- saidbar search -->
                                 <div class="categories mt-30">
                                     <h4>Cources</h4>
                                     <ul>
@@ -186,41 +192,37 @@
                                                         <h6>Introduction to languages</h6>
                                                         <span>20 Dec 2018</span>
                                                     </div>
-                                                </div>-->
-                            <!-- singel post -->
-                            <!--</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="singel-post">
-                                        <div class="thum">
-                                            <img src="~/WebsiteTemplate/images/blog/blog-post/bp-2.jpg" alt="Blog">
-                                        </div>
-                                        <div class="cont">
-                                            <h6>How to build a game with java</h6>
-                                            <span>10 Dec 2018</span>
-                                        </div>
-                                    </div>-->
-                            <!-- singel post -->
-                            <!--</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="singel-post">
-                                        <div class="thum">
-                                            <img src="~/WebsiteTemplate/images/blog/blog-post/bp-1.jpg" alt="Blog">
-                                        </div>
-                                        <div class="cont">
-                                            <h6>Basic accounting from primary</h6>
-                                            <span>07 Dec 2018</span>
-                                        </div>
-                                    </div>-->
-                            <!-- singel post -->
-                            <!--</a>
-                                    </li>
-                                </ul>
-                            </div>-->
-                            <!-- saidbar post -->
+                                                </div>--> <!-- singel post -->
+                                            <!--</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="singel-post">
+                                                    <div class="thum">
+                                                        <img src="~/WebsiteTemplate/images/blog/blog-post/bp-2.jpg" alt="Blog">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <h6>How to build a game with java</h6>
+                                                        <span>10 Dec 2018</span>
+                                                    </div>
+                                                </div>--> <!-- singel post -->
+                                            <!--</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="singel-post">
+                                                    <div class="thum">
+                                                        <img src="~/WebsiteTemplate/images/blog/blog-post/bp-1.jpg" alt="Blog">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <h6>Basic accounting from primary</h6>
+                                                        <span>07 Dec 2018</span>
+                                                    </div>
+                                                </div>--> <!-- singel post -->
+                                            <!--</a>
+                                        </li>
+                                    </ul>
+                                </div>--> <!-- saidbar post -->
                             <!--</div>-->
                         </div> <!-- row -->
                     </div> <!-- saidbar -->

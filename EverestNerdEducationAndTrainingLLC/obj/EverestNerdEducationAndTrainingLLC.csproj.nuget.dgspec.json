@@ -44,7 +44,23 @@
               "target": "Package",
               "version": "[2.0.123, )"
             },
+            "EO.WebBrowser": {
+              "target": "Package",
+              "version": "[22.2.79, )"
+            },
+            "LocalStorage": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.4.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[5.0.17, )"
             },

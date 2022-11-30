@@ -1,4 +1,7 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model EverestNerdEducationAndTrainingLLC.Models.Course
+<!doctype html>
 <html lang="en">
 <head>
 
@@ -9,40 +12,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--====== Title ======-->
-    <!--<title>Everest Nerd Education and Learning</title>-->
+    <title>Everest Nerd Education and Learning</title>
 
     <!--====== Favicon Icon ======-->
-    <!--<link rel="shortcut icon" href="~/WebsiteTemplate/images/favicon.png" type="image/png">-->
+    <link rel="shortcut icon" href="~/WebsiteTemplate/images/favicon.png" type="image/png">
 
     <!--====== Slick css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/slick.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/slick.css">
 
     <!--====== Animate css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/animate.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/animate.css">
 
     <!--====== Nice Select css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/nice-select.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/nice-select.css">
 
     <!--====== Nice Number css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/jquery.nice-number.min.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/jquery.nice-number.min.css">
 
     <!--====== Magnific Popup css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/magnific-popup.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/magnific-popup.css">
 
     <!--====== Bootstrap css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/bootstrap.min.css">
 
     <!--====== Fontawesome css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/font-awesome.min.css">
 
     <!--====== Default css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/default.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/default.css">
 
     <!--====== Style css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/style.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/style.css">
 
     <!--====== Responsive css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/responsive.css">-->
+    <link rel="stylesheet" href="~/WebsiteTemplate/css/responsive.css">
 
 
 </head>
@@ -74,9 +77,9 @@
                 <input type="text" placeholder="Search by keyword">
                 <button><i class="fa fa-search"></i></button>
             </form>
-        </div>-->
-    <!-- serach form -->
+        </div>--> <!-- serach form -->
     <!--</div>-->
+
     <!--====== SEARCH BOX PART ENDS ======-->
     <!--====== PAGE BANNER PART START ======-->
 
@@ -85,11 +88,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-banner-cont">
-                        <h2>Biology</h2>
+                        <h2>@Model.Name</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Biology</li>
+                                <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
                             </ol>
                         </nav>
                     </div>  <!-- page banner cont -->
@@ -107,60 +110,63 @@
                 <div class="col-lg-8">
                     <div class="singel-blog mt-30">
                         <div class="blog-thum">
-                            <img src="~/WebsiteTemplate/biology.jpg" alt="Blog">
+                            <img src="@Model.ImagePath" alt="Blog">
                         </div>
                         <div class="blog-cont">
-                            <a href="#"><h3>Biology</h3></a>
+                            <a href="#"><h3>@Model.Name</h3></a>
                             <ul>
                                 <li><a href="#"><i class="fa fa-calendar"></i>1 Jun 2022</a></li>
-                                <li><a href="#"><i class="fa fa-user"></i>Sunil Pandey</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i>@Model.Teacher</a></li>
                                 <li><a href="#"><i class="fa fa-tags"></i>Education</a></li>
                             </ul>
-                            <p>Biology is the study of living things. It encompasses the cellular basis of living things, the energy metabolism that underlies the activities of life, and the genetic basis for inheritance in organisms. Biology also includes the study of evolutionary relationships among organisms and the diversity of life on Earth. It considers the biology of microorganisms, plants, and animals, for example, and it brings together the structural and functional relationships that underlie their day-to-day activities. Biology draws on the sciences of chemistry and physics for its foundations and applies the laws of these disciplines to living things. <br<br> Many subdisciplines and special areas of biology exist, which can be conveniently divided into practical and theoretical categories. Types of practical biology include plant breeding, wildlife management, medical science, and crop production. Theoretical biology encompasses such disciplines as physiology (the study of the function of living things), biochemistry (the study of the chemistry of organisms), taxonomy (classification), ecology (the study of populations and their interactions with each other and their environments), and microbiology (the study of microscopic organisms).</p>
+                            <p>@Model.Discription</p>
+                            @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") != null){
+                            <button class="btn btn-primary"><a href="/Home/EditCourse/@Model.Id" style="color: white">Edit</a></button>
+                            }
                         </div>
                     </div> <!-- singel blog -->
                     @*<div class="singel-blog mt-30">
-                            <div class="blog-thum">
-                                <img src="~/WebsiteTemplate/images/blog/b-2.jpg" alt="Blog">
-                            </div>
-                            <div class="blog-cont">
-                                <a href="#"><h3>Few tips for get better results in examination</h3></a>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-calendar"></i>25 Dec 2018</a></li>
-                                    <li><a href="#"><i class="fa fa-user"></i>Mark anthem</a></li>
-                                    <li><a href="#"><i class="fa fa-tags"></i>Education</a></li>
-                                </ul>
-                                <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .</p>
-                            </div>
-                        </div>*@ <!-- singel blog -->
-                    @*<nav class="courses-pagination mt-50">
-                            <ul class="pagination justify-content-lg-end justify-content-center">
-                                <li class="page-item">
-                                    <a href="#" aria-label="Previous">
-                                        <i class="fa fa-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="active" href="#">1</a></li>
-                                <li class="page-item"><a href="#">2</a></li>
-                                <li class="page-item"><a href="#">3</a></li>
-                                <li class="page-item">
-                                    <a href="#" aria-label="Next">
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </li>
+                        <div class="blog-thum">
+                            <img src="~/WebsiteTemplate/images/blog/b-2.jpg" alt="Blog">
+                        </div>
+                        <div class="blog-cont">
+                            <a href="#"><h3>Few tips for get better results in examination</h3></a>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-calendar"></i>25 Dec 2018</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i>Mark anthem</a></li>
+                                <li><a href="#"><i class="fa fa-tags"></i>Education</a></li>
                             </ul>
-                        </nav>*@  <!-- courses pagination -->
+                            <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .</p>
+                        </div>
+                    </div>*@ <!-- singel blog -->
+                    @*<nav class="courses-pagination mt-50">
+                        <ul class="pagination justify-content-lg-end justify-content-center">
+                            <li class="page-item">
+                                <a href="#" aria-label="Previous">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="active" href="#">1</a></li>
+                            <li class="page-item"><a href="#">2</a></li>
+                            <li class="page-item"><a href="#">3</a></li>
+                            <li class="page-item">
+                                <a href="#" aria-label="Next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>*@  <!-- courses pagination -->
                 </div>
                 <div class="col-lg-4">
                     <div class="saidbar">
                         <div class="row">
                             <div class="col-lg-12 col-md-6">
                                 @*<div class="saidbar-search mt-30">
-                                        <form action="#">
-                                            <input type="text" placeholder="Search">
-                                            <button type="button"><i class="fa fa-search"></i></button>
-                                        </form>
-                                    </div>*@ <!-- saidbar search -->
+                                    <form action="#">
+                                        <input type="text" placeholder="Search">
+                                        <button type="button"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>*@ <!-- saidbar search -->
                                 <div class="categories mt-30">
                                     <h4>Cources</h4>
                                     <ul>
@@ -186,41 +192,37 @@
                                                         <h6>Introduction to languages</h6>
                                                         <span>20 Dec 2018</span>
                                                     </div>
-                                                </div>-->
-                            <!-- singel post -->
-                            <!--</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="singel-post">
-                                        <div class="thum">
-                                            <img src="~/WebsiteTemplate/images/blog/blog-post/bp-2.jpg" alt="Blog">
-                                        </div>
-                                        <div class="cont">
-                                            <h6>How to build a game with java</h6>
-                                            <span>10 Dec 2018</span>
-                                        </div>
-                                    </div>-->
-                            <!-- singel post -->
-                            <!--</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="singel-post">
-                                        <div class="thum">
-                                            <img src="~/WebsiteTemplate/images/blog/blog-post/bp-1.jpg" alt="Blog">
-                                        </div>
-                                        <div class="cont">
-                                            <h6>Basic accounting from primary</h6>
-                                            <span>07 Dec 2018</span>
-                                        </div>
-                                    </div>-->
-                            <!-- singel post -->
-                            <!--</a>
-                                    </li>
-                                </ul>
-                            </div>-->
-                            <!-- saidbar post -->
+                                                </div>--> <!-- singel post -->
+                                            <!--</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="singel-post">
+                                                    <div class="thum">
+                                                        <img src="~/WebsiteTemplate/images/blog/blog-post/bp-2.jpg" alt="Blog">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <h6>How to build a game with java</h6>
+                                                        <span>10 Dec 2018</span>
+                                                    </div>
+                                                </div>--> <!-- singel post -->
+                                            <!--</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="singel-post">
+                                                    <div class="thum">
+                                                        <img src="~/WebsiteTemplate/images/blog/blog-post/bp-1.jpg" alt="Blog">
+                                                    </div>
+                                                    <div class="cont">
+                                                        <h6>Basic accounting from primary</h6>
+                                                        <span>07 Dec 2018</span>
+                                                    </div>
+                                                </div>--> <!-- singel post -->
+                                            <!--</a>
+                                        </li>
+                                    </ul>
+                                </div>--> <!-- saidbar post -->
                             <!--</div>-->
                         </div> <!-- row -->
                     </div> <!-- saidbar -->
@@ -245,7 +247,7 @@
     <script src="~/WebsiteTemplate/js/jquery.magnific-popup.min.js"></script>
 
     <!--====== Counter Up js ======-->
-    <script src="~/WebsiteTemplate/js/waypoints.min.js"></script>
+    <script src="~/WebsiteTemplate/js/waypoints.min.js"></script>   
     <script src="~/WebsiteTemplate/js/jquery.counterup.min.js"></script>
 
     <!--====== Nice Select js ======-->

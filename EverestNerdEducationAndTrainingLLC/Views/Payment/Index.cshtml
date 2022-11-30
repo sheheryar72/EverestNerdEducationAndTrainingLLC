@@ -1,4 +1,8 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model EverestNerdEducationAndTrainingLLC.Models.BankDetails
+
+<!doctype html>
 <html lang="en">
 <head>
 
@@ -7,42 +11,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--====== Title ======-->
-    <!--<title>Everest Nerd and Education Learning</title>-->
-
-    <!--====== Favicon Icon ======-->
-    <!--<link rel="shortcut icon" href="~/WebsiteTemplate/images/favicon.png" type="image/png">-->
-
-    <!--====== Slick css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/slick.css">-->
-
-    <!--====== Animate css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/animate.css">-->
-
-    <!--====== Nice Select css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/nice-select.css">-->
-
-    <!--====== Nice Number css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/jquery.nice-number.min.css">-->
-
-    <!--====== Magnific Popup css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/magnific-popup.css">-->
-
-    <!--====== Bootstrap css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/bootstrap.min.css">-->
-
-    <!--====== Fontawesome css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/font-awesome.min.css">-->
-
-    <!--====== Default css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/default.css">-->
-
-    <!--====== Style css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/style.css">-->
-
-    <!--====== Responsive css ======-->
-    <!--<link rel="stylesheet" href="~/WebsiteTemplate/css/responsive.css">-->
 
     <style>
         .classrow {
@@ -198,22 +166,40 @@
     <!--====== CONTACT PART START ======-->
 
     <section>
+         <div class="container" style="margin-top: 3%;">
+            <h4 style="margin-top: 2%;">Bank Details</h4>
+            <h6>Account No:</h6>
+            <p>@Model.AccountNO</p>
+            <h6>BankName:</h6>
+            <p>@Model.BankName</p>
+            <h6>PhoneNo:</h6>
+            <p>@Model.PhoneNo</p>
+            <h6>Email:</h6>
+            <p>@Model.Email</p>
+            <h6>Country:</h6>
+            <p>@Model.Country</p>
+            <h6>City:</h6>
+            <p>@Model.City</p>
+            @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") != null)
+            {
+            <button class="btn btn-primary"><a href="/Home/EditBankDetails/@Model.Id" style="color: white">Edit Bank Details</a></button>
+            }
+         </div>
+    </section>
+
+    <section>
         <div class="row">
             <div class="col-75">
                 <div class="container">
-                    <form action="/action_page.php">
+
+                   
+
+                        <form action="/Home/Index/">
                         <div class="row">
                             <div class="col-50">
                                 <div class="col-50">
                                     <h3>Payment</h3>
-                                    <label for="fname">Accepted Cards</label>
-                                    <div class="icon-container">
-                                        <i class="fa fa-cc-visa" style="color:navy;"></i>
-                                        <i class="fa fa-cc-amex" style="color:blue;"></i>
-                                        <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                                        <i class="fa fa-cc-discover" style="color:orange;"></i>
-                                    </div>
-                                    <label for="cname">Name on Card</label>
+                                    
                                     <input type="text" id="cname" name="cardname" placeholder="John More Doe">
                                     <label for="ccnum">Credit card number</label>
                                     <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">

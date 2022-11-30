@@ -1,0 +1,49 @@
+﻿@model EverestNerdEducationAndTrainingLLC.Models.AboutUs
+
+<section style="padding: 5%">
+    <div class="text-center">
+        <h3>Edit Footer</h3>
+</div>
+    <form method="post" action="/Home/UpdateAboutUs">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Title</label>
+    <input type="hidden" name="Id" value="@Model.Id"/>
+    <input type="text" class="form-control" name="Title" id="exampleInputPassword1" placeholder="Title" value="@Model.Title">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Discription</label>
+    <input type="text" class="form-control" name="Discription" id="exampleInputPassword1" placeholder="Discription" value="@Model.Discription">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Why Choose Us</label>
+    <input type="text" class="form-control" name="WhyChooseUs" id="exampleInputPassword1" placeholder="Why ChooseUs" value="@Model.WhyChooseUs">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Our Mission</label>
+    <input type="text" class="form-control" name="OurMission" id="exampleInputPassword1" placeholder="Our Mission" value="@Model.OurMission">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Our Vission</label>
+    <input type="text" class="form-control" name="OurVission" id="exampleInputPassword1" placeholder="Our Vission" value="@Model.OurVission">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Students Enrolled</label>
+    <input type="text" class="form-control" name="StudentsEnrolled" id="exampleInputPassword1" placeholder="Students Enrolled" value="@Model.StudentsEnrolled">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Courses Uploaded</label>
+    <input type="text" class="form-control" name="CoursesUploaded" id="exampleInputPassword1" placeholder="Courses Uploaded" value="@Model.CoursesUploaded">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">People Certifie</label>
+    <input type="text" class="form-control" name="PeopleCertifie" id="exampleInputPassword1" placeholder="People Certifie" value="@Model.PeopleCertifie">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Global Teachers</label>
+    <input type="text" class="form-control" name="GlobalTeachers" id="exampleInputPassword1" placeholder="Global Teachers" value="@Model.GlobalTeachers">
+  </div>
+  
+  <button type="submit" class="btn btn-primary" style="margin-top: 2%">Update About Us</button>
+</form>
+</section>
+

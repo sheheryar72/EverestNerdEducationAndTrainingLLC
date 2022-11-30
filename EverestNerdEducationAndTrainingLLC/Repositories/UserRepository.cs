@@ -37,6 +37,23 @@ namespace EverestNerdEducationAndTrainingLLC.Repositories
             var result = conn.Query<int>(query, param: _parameter, commandType: CommandType.Text).FirstOrDefault();
             return result;
         }
+
+        public int EditFooterInDB(Footer footer)
+        {
+            string query = "Update Footer Set = Email @Email, Phone = @Phone, Address = @Address, Discription = @Discription, Facebook = @Facebook, Google = @Google, Twitter = @Twitter, Instagram = @Instagram) Where Id = @Id Select @Id";
+            var _parameter = new Dictionary<string, object>();
+            _parameter.Add("@Email", footer.Email);
+            _parameter.Add("@Phone", footer.Phone);
+            _parameter.Add("@Address", footer.Address);
+            _parameter.Add("@Discription", footer.Discription);
+            _parameter.Add("@Facebook", footer.Facebook);
+            _parameter.Add("@Google", footer.Google);
+            _parameter.Add("@Twitter", footer.Twitter);
+            _parameter.Add("@Instagram", footer.Instagram);
+            var result = conn.Query<int>(query, param: _parameter, commandType: CommandType.Text).FirstOrDefault();
+            return result;
+        }
+
         public Tokens AuthenticateUserFromDB(string Email, string Password)
         {
             try
@@ -136,6 +153,15 @@ namespace EverestNerdEducationAndTrainingLLC.Repositories
                 return false;
             }
             return true;
+        }
+
+        public Footer GetFooterById(int Id)
+        {
+            string query = "Select * from Footer where Id = @Id";
+            var _parameter = new Dictionary<string, object>();
+            _parameter.Add("@Id", Id);
+            Footer result = conn.Query<Footer>(query, param: _parameter, commandType: CommandType.Text).FirstOrDefault();
+            return result;
         }
     }
 }

@@ -1,0 +1,185 @@
+﻿<style>
+    .navbar-expand-lg .navbar-nav .nav-link {
+    color: #000;
+}
+img#ourteamimg {
+    width: 55%;
+}
+p#teamparagraph {
+    font-size: 16px;
+    margin-top: 2%;
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+</style>
+<!-- about breadcrumb -->
+<section class="w3l-about-breadcrumb position-relative">
+                
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+        @*<div id="medprofimg" class="text-center" style="margin-top: 3%">
+        <img  src="~/images/empapplication.jpeg" id="workwithusid"/>
+        </div>*@
+
+        <div class="container py-lg-5 py-3 text-center" style="margin-bottom: -3%">
+            <h2 class="title text-center">Employment Application</h2>
+            @*<p id="workwith1" style="margin-top:3%">
+          Please fill out an application to be consider for employment. You may use the online form below or print and submit a form manually.
+          <br/>We currently have no job openings
+        </p>*@
+        </div>
+
+    </div>
+    
+</section>
+
+<section style="padding: 10%; margin-top: -10%">
+
+<form method="Post" action="/Home/InsertEmploymentApplication/" enctype="multipart/form-data">
+  <div class="row" style="margin-top: 2%">
+    <div class="col">
+        <label for="exampleInputPassword1">Full Name</label>
+      <input type="text" name="FullName" class="form-control" placeholder="Full Name">
+    </div>
+    <div class="col">
+        <label for="exampleInputPassword1">Email</label>
+      <input type="email" name="Email" class="form-control" placeholder="Email">
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 2%">
+    <div class="col">
+        <label for="exampleInputPassword1">Applied For</label>
+      <input type="text" name="AppliedFor" class="form-control" placeholder="Applied For">
+    </div>
+    <div class="col">
+        <label for="exampleInputPassword1">Experience</label>
+      <input type="text" name="Experience" class="form-control" placeholder="Experience">
+    </div>
+  </div>
+  
+  <div class="form-group" style="margin-top: 2%">
+    <label for="exampleInputEmail1">Message</label>
+    <textarea type="text" name="Message" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Message"></textarea>
+  </div>
+
+  <div class="form-group" style="margin-top: 2%">
+    <label for="exampleInputPassword1">CV</label>
+      <input type="file" name="CV" class="form-control" placeholder="CV">
+  </div>
+  <button type="submit" class="btn btn-primary" style="background-color: red; margin-top: 2%">Submit</button>
+</form>
+
+</section>
+
+
+@*<section class="h-100 bg-dark">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="~/images/empapplication.jpg"
+                alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">Employment Application Form</h3>
+
+                <form method="Post" action="/Home/InsertEmploymentApplication/">
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example8" name="FullName" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example8">Full Name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example9" name="Email" class="form-control form-control-lg" />
+                  <label class="form-label"  for="form3Example9">Email</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example90" name="AppliedFor" class="form-control form-control-lg" />
+                  <label class="form-label"  for="form3Example90">AppliedFor</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example97" name="Message" class="form-control form-control-lg" />
+                  <label class="form-label"  for="form3Example97">Message</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="number" id="form3Example97" name="Experience" class="form-control form-control-lg" />
+                  <label class="form-label"  for="form3Example97">Experience</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="file" id="form3Example97" name="CV" class="form-control form-control-lg" />
+                  <label class="form-label"  for="form3Example97">CV</label>
+                </div>
+
+                <input type="hidden" name="JobId" value="@ViewBag.JobId"/>
+
+                <div class="d-flex justify-content-end pt-3">
+                  <button type="button" class="btn btn-light btn-lg">Reset all</button>
+                  <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>*@
+
+
+
+    
+<!-- Template JavaScript -->
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script src="~/js/theme-change.js"></script>
+<!-- disable body scroll which navbar is in active -->
+<script>
+    $(function () {
+      $('.navbar-toggler').click(function () {
+        $('body').toggleClass('noscroll');
+      })
+    });
+</script>
+<!-- disable body scroll which navbar is in active -->
+<!--/MENU-JS-->
+<script>
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+</script>

@@ -1,4 +1,7 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+@model EverestNerdEducationAndTrainingLLC.Models.Course
+<!doctype html>
 <html lang="en">
 <head>
 
@@ -85,11 +88,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-banner-cont">
-                        <h2>Physics</h2>
+                        <h2>@Model.Name</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Physics</li>
+                                <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
                             </ol>
                         </nav>
                     </div>  <!-- page banner cont -->
@@ -107,18 +110,28 @@
                 <div class="col-lg-8">
                     <div class="singel-blog mt-30">
                         <div class="blog-thum">
-                            <img src="~/WebsiteTemplate/physics.jpg" alt="Blog">
+                            <img src="@Model.ImagePath" alt="Blog">
                         </div>
                         <div class="blog-cont">
-                            <a href="#"><h3>Physics</h3></a>
+                            <a href="#"><h3>@Model.Name</h3></a>
                             <ul>
                                 <li><a href="#"><i class="fa fa-calendar"></i>1 Jun 2022</a></li>
-                                <li><a href="#"><i class="fa fa-user"></i>John</a></li>
+                                <li><a href="#"><i class="fa fa-user"></i>@Model.Teacher</a></li>
                                 <li><a href="#"><i class="fa fa-tags"></i>Education</a></li>
                             </ul>
-                            <p>Broadly, physics involves the study of everything in physical existence, from the smallest subatomic particles to the entire universe. Physicists try to develop conceptual and mathematical models that describe interactions between entities (both big and small) and that can be used to extend our understanding of how the universe works at different scales. Studying for a BS in Physics gives a broad overview of the most well-established of these models, such as classical mechanics, thermodynamics, electromagnetism, and quantum mechanics, as well as the computational and experimental skills used in working with them. With this background you are ready to specialize in any sub-field, .</p>
+                            <p>@Model.Discription</p>
+                            @if (@Accessor.HttpContext.Session.GetString("IsUserLoggedIn") != null){
+                            <button class="btn btn-primary"><a href="/Home/EditCourse/@Model.Id" style="color: white">Edit</a></button>
+                            }
                         </div>
-                    </div> <!-- singel blog -->
+                    </div>
+                    
+
+                   @* <div>
+                        
+                    </div>*@
+
+                    <!-- singel blog -->
                     @*<div class="singel-blog mt-30">
                         <div class="blog-thum">
                             <img src="~/WebsiteTemplate/images/blog/b-2.jpg" alt="Blog">

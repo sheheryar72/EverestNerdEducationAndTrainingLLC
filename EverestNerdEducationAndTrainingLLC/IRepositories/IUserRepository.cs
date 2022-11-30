@@ -14,5 +14,7 @@ namespace EverestNerdEducationAndTrainingLLC.IRepositories
         int EditCustomer(User user);
         User GetCustomerByEmail(string UserEmail);
         bool IsTokenValid(string key, string issuer, string token);
+        int EditFooterInDB(Footer footer);
+        Footer GetFooterById(int Id);
     }
 }
